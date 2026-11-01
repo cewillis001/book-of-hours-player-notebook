@@ -1,0 +1,8 @@
+{
+  "name": "Player Notebook",
+  "author": "Player Notebook contributors",
+  "version": "0.1.0",
+  "description": "Experimental player-authored physical notebooks. Development prototype.",
+  "description_long": "Double-click a notebook to write your own notes. Includes a Lodge starter for new games and brown bindings crafted with paper and Stitching & Binding. Development prototype; requires FEATHER DLL mod permission (GHIRBI).",
+  "tags": ["Expansion", "UI"]
+}

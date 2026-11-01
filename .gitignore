@@ -1,0 +1,21 @@
+.tools/
+scratch/
+references/
+**/bin/
+**/obj/
+dist/
+*.user
+
+# Local continuation notes contain machine paths and private test/save history.
+/PROGRESS.md
+.vs/
+.idea/
+*.suo
+*.log
+.env
+.env.*
+*.dll
+*.exe
+*.pdb
+*.zip
+*.7z

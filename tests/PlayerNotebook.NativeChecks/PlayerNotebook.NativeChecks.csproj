@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><LangVersion>latest</LangVersion>
+    <GameDir Condition="'$(GameDir)' == ''">D:\SteamLibrary\steamapps\common\Book of Hours</GameDir>
+    <ManagedDir>$(GameDir)\bh_Data\Managed</ManagedDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Lib.Harmony" Version="2.3.3" />
+    <Compile Include="../../src/PlayerNotebook/NotebookDocument.cs" Link="NotebookDocument.cs" />
+    <Reference Include="SecretHistories.Main"><HintPath>$(ManagedDir)\SecretHistories.Main.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="SecretHistories.Interfaces"><HintPath>$(ManagedDir)\SecretHistories.Interfaces.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="SecretHistories.Enums"><HintPath>$(ManagedDir)\SecretHistories.Enums.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Newtonsoft.Json"><HintPath>$(ManagedDir)\Newtonsoft.Json.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(ManagedDir)\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,28 @@
+{
+  "recipes": [
+    {
+      "id": "playernotebook.craft.brown.plain",
+      "actionid": "library.desk.*",
+      "label": "Bind a Plain Notebook",
+      "startdescription": "Fold and stitch a quire into a reusable commonplace book. [Requires Stitching & Binding below level 4, paper, and a compatible Soul. Leave ink, tools and memories out.]",
+      "desc": "Blank pages, ready for whatever I choose to write.",
+      "reqs": {"ability": 1, "s.stitching.binding": 1, "skill": -4, "quire.paper": 1, "ink": -1, "tool": -1, "memory": -1, "readable": -1, "perinculate": -1},
+      "effects": {"quire.paper": -1, "playernotebook.brown.plain": 1},
+      "aspects": {"fatiguing": 1},
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.craft.brown.decorated",
+      "actionid": "library.desk.*",
+      "label": "Bind a Decorated Notebook",
+      "startdescription": "Work a more elaborate binding around a quire. [Requires Stitching & Binding level 4 or higher, paper, and a compatible Soul. Leave ink, tools and memories out.]",
+      "desc": "A little craftsmanship makes room for a little thought.",
+      "reqs": {"ability": 1, "s.stitching.binding": 1, "skill": 4, "quire.paper": 1, "ink": -1, "tool": -1, "memory": -1, "readable": -1, "perinculate": -1},
+      "effects": {"quire.paper": -1, "playernotebook.brown.decorated": 1},
+      "aspects": {"fatiguing": 1},
+      "warmup": 60,
+      "craftable": true
+    }
+  ]
+}

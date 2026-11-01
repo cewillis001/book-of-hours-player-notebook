@@ -1,0 +1,20 @@
+{
+  "elements": [
+    {
+      "id": "playernotebook.brown.plain",
+      "label": "Untitled Notebook",
+      "desc": "A blank commonplace book. Double-click to write your own notes.",
+      "icon": "playernotebook.brown.plain",
+      "manifestationtype": "Book",
+      "aspects": {"thing": 1}
+    },
+    {
+      "id": "playernotebook.brown.decorated",
+      "label": "Untitled Notebook",
+      "desc": "A commonplace book with a worked binding. Double-click to write your own notes.",
+      "icon": "playernotebook.brown.decorated",
+      "manifestationtype": "Book",
+      "aspects": {"thing": 1}
+    }
+  ]
+}
