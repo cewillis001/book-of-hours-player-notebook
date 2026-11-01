@@ -66,8 +66,18 @@ build output are excluded. Building requires your own installed copy of the game
 The development runtime-test harness also requires local disposable save fixtures, which
 are not included. Never distribute a build compiled with `NOTEBOOK_TESTING`.
 
-An open-source license for the project's own code and artwork has not yet been selected.
-Dependency licensing is documented in [third-party notices](docs/THIRD-PARTY-NOTICES.md).
+## Licensing
+
+The project's original code, scripts, mod definitions and documentation are licensed
+under [Zero-Clause BSD (0BSD)](LICENSE), except where a separate notice applies.
+The original notebook cover/spine PNGs and interface mockup are dedicated under
+[CC0 1.0 Universal](LICENSES/CC0-1.0.txt). See [artwork provenance and scope](docs/ASSETS.md)
+(included as `ASSETS.md` in the packaged mod).
+
+These permissions allow commercial reuse and modification without an attribution or
+share-alike requirement for our original work. Third-party components retain their own
+licenses: Lib.Harmony remains MIT licensed, and game resources are not redistributed
+or relicensed. See [third-party notices](docs/THIRD-PARTY-NOTICES.md).
 
 ## Experimental installation
 

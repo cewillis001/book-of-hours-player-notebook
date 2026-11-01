@@ -23,5 +23,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 The game provides Unity, Secret Histories and Newtonsoft.Json assemblies. None of those
-files, game images or game content files are included in the mod package. The content
-references an existing game image. Build-only tool ilspycmd 9.1.0.7988 is not distributed.
+files, game images or game content files are included in the mod package. Notebook
+definitions reference this project's original cover and spine images. The editor uses
+the installed game's fonts and native UI at runtime without distributing their files.
+Build-only tool ilspycmd 9.1.0.7988 is not distributed.
+
+The project's own code is licensed under 0BSD; its original PNG artwork is dedicated
+under CC0 1.0 Universal. These terms do not replace Harmony's MIT license or apply to
+the game's resources. See LICENSE and ASSETS.md in the mod package, or ../LICENSE and
+ASSETS.md beside this notice in the source repository. Full CC0 terms are included in
+LICENSES/CC0-1.0.txt in the mod package and ../LICENSES/CC0-1.0.txt in the repository.

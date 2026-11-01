@@ -19,6 +19,9 @@ try {
     Copy-Item -LiteralPath "$repo\README.md" -Destination $modDir
     Copy-Item -LiteralPath "$repo\docs\manual-tests.md" -Destination $modDir
     Copy-Item -LiteralPath "$repo\docs\THIRD-PARTY-NOTICES.md" -Destination $modDir
+    Copy-Item -LiteralPath "$repo\LICENSE" -Destination $modDir
+    Copy-Item -LiteralPath "$repo\docs\ASSETS.md" -Destination $modDir
+    Copy-Item -LiteralPath "$repo\LICENSES" -Destination $modDir -Recurse
     $zip = Join-Path $repo 'dist\PlayerNotebook-0.1.0-prototype.zip'
     Compress-Archive -LiteralPath $modDir -DestinationPath $zip -Force
     Write-Output "Prototype package: $zip"
