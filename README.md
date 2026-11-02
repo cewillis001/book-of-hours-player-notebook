@@ -14,6 +14,7 @@ Verified behavior and remaining checks are in [docs/manual-tests.md](docs/manual
 - Double-click opens a book-style editor with a left entry index, title, optional headings,
   multiline writing area, reorder controls and deletion confirmation. The editor scales
   with screen height and width; A−/A+ adjust writing text. Existing notes open immediately.
+  Each notebook reopens its last selected entry; normal game saves preserve that choice.
 - Schema-versioned data inside each card's native `Illuminations`, including notebook
   and entry identities. No global notebook store or external notebook database.
 - Dynamic label fallback exactly `Untitled Notebook`; titles are preserved verbatim.

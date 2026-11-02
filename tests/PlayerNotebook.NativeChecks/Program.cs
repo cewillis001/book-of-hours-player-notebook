@@ -39,12 +39,15 @@ internal static class Program
         var document = NotebookCodec.Read(null, stack.Id);
         document.Title = "Native — 記録";
         document.Entries.Add(new NotebookEntry { Body = "One\nTwo\r\n📚" });
+        document.Entries.Add(new NotebookEntry { Heading = "Last used", Body = "Independent entry" });
+        document.LastSelectedEntryId = document.Entries[1].Id;
         stack.SetIllumination(NotebookCodec.IlluminationKey, NotebookCodec.Write(document));
         var command = new Encaustery<ElementStackCreationCommand>().Encaust(stack);
         var json = JsonConvert.SerializeObject(command);
         var restored = JsonConvert.DeserializeObject<ElementStackCreationCommand>(json);
         var result = NotebookCodec.Read(restored.Illuminations[NotebookCodec.IlluminationKey], restored.Id);
-        if (result.Id != document.Id || result.Title != document.Title || result.Entries[0].Body != document.Entries[0].Body)
+        if (result.Id != document.Id || result.Title != document.Title || result.Entries[0].Body != document.Entries[0].Body
+            || result.LastSelectedEntryId != document.LastSelectedEntryId || result.OpeningEntryIndex != 1)
             throw new Exception("Native serialization round trip failed");
         Console.WriteLine("PASS installed-engine Encaustery -> creation command -> JSON -> notebook round trip");
         // Run the compiled production patches against real game objects, without Unity UI.

@@ -7,6 +7,11 @@ Isolated in-game checks on FEATHER2026.1.f.3,2026-10-31:
 - Complete layout fits at1280×720,1920×1080 and5120×1440; A+ increases writing size.
 - Existing entries open immediately. Creating an entry remains manual. Unicode typing
   works; Ctrl+Z removes a temporary edit and Ctrl+Y restores it.
+- Last-entry memory (2026-11-01): a manually created second entry remained selected after
+  closing, opening two other notebooks and returning. Native save and a full restart also
+  reopened that entry. Original text/IDs/order and separate notebook contents were preserved;
+  an empty notebook stayed empty. Reorder/copy/deletion fallback currently have model checks
+  rather than feature-specific live UI verification.
 - A manually created third notebook with an empty entry heading and Unicode body saved
   exactly; the original two notebook payloads remained byte-for-byte identical.
 - A31,391-character note loaded, scrolled to Paragraph300, accepted a temporary manual

@@ -68,7 +68,9 @@ public sealed class NotebookWindow : MonoBehaviour
         {
             titleField.LoadText(document.Title);
             RebuildIndex();
-            SelectEntry(document.Entries.Count > 0 ? 0 : -1);
+            SelectEntry(document.OpeningEntryIndex);
+            listScroll.verticalNormalizedPosition = document.Entries.Count > 1
+                ? 1f - (float)selected / (document.Entries.Count - 1) : 1f;
         }
     }
 
@@ -265,6 +267,12 @@ public sealed class NotebookWindow : MonoBehaviour
     private void SelectEntry(int i)
     {
         selected = i; confirmDelete = false;
+        var entryId = i >= 0 ? document.Entries[i].Id : null;
+        if (document.LastSelectedEntryId != entryId)
+        {
+            document.LastSelectedEntryId = entryId;
+            Commit();
+        }
         if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
         editor.SetActive(i >= 0); empty.SetActive(i < 0);
         if (i >= 0)

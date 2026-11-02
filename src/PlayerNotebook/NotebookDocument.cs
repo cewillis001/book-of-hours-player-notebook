@@ -23,7 +23,11 @@ namespace PlayerNotebooks
         public string Color { get; set; } = "brown";
         public string Design { get; set; } = "plain";
         public List<NotebookEntry> Entries { get; set; } = new List<NotebookEntry>();
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string LastSelectedEntryId { get; set; }
         [JsonIgnore] public string DisplayName => string.IsNullOrWhiteSpace(Title) ? "Untitled Notebook" : Title;
+        [JsonIgnore] public int OpeningEntryIndex => Entries.Count == 0 ? -1 :
+            Math.Max(0, Entries.FindIndex(entry => entry.Id == LastSelectedEntryId));
 
         public void MoveEntry(int from, int to)
         {
@@ -57,7 +61,12 @@ namespace PlayerNotebooks
             {
                 document.Id = Guid.NewGuid().ToString("N");
                 document.OwnerStackId = ownerStackId;
-                foreach (var entry in document.Entries) entry.Id = Guid.NewGuid().ToString("N");
+                foreach (var entry in document.Entries)
+                {
+                    var remembered = entry.Id == document.LastSelectedEntryId;
+                    entry.Id = Guid.NewGuid().ToString("N");
+                    if (remembered) document.LastSelectedEntryId = entry.Id;
+                }
             }
             return document;
         }

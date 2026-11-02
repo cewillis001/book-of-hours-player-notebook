@@ -33,6 +33,25 @@ var loaded = NotebookCodec.Read(raw, "card-a");
 Check(loaded.Id == a.Id && loaded.Entries[1].Id == a.Entries[1].Id, "Identity survives serialization");
 Check(loaded.DisplayName == a.Title && b.DisplayName == a.Title && b.Entries.Count == 0, "Duplicate titles remain independent");
 Check(loaded.Entries[1].Body == body && loaded.Entries[0].Body == "", "Order, Unicode, line breaks, and empty fields survive");
+Check(loaded.LastSelectedEntryId == null && loaded.OpeningEntryIndex == 0 && b.OpeningEntryIndex == -1,
+    "Existing notes without a bookmark open first entry; empty notes stay empty");
+loaded.LastSelectedEntryId = loaded.Entries[1].Id;
+var remembered = NotebookCodec.Read(NotebookCodec.Write(loaded), "card-a");
+Check(remembered.OpeningEntryIndex == 1 && remembered.Entries[1].Body == body,
+    "Last selected entry survives save/load without changing text");
+remembered.MoveEntry(1, 0);
+Check(remembered.OpeningEntryIndex == 0 && remembered.Entries[0].Body == body,
+    "Remembered entry follows identity through reordering");
+var rememberedCopy = NotebookCodec.Read(NotebookCodec.Write(remembered), "copied-card");
+Check(rememberedCopy.LastSelectedEntryId != remembered.LastSelectedEntryId &&
+    rememberedCopy.OpeningEntryIndex == 0 && rememberedCopy.Entries[0].Body == body,
+    "Copied notebook remaps remembered entry to its independent identity");
+remembered.Entries.RemoveAt(0);
+Check(remembered.OpeningEntryIndex == 0, "Missing remembered entry falls back to remaining first entry");
+remembered.Entries.Clear();
+Check(remembered.OpeningEntryIndex == -1, "Removing all entries leaves no selected entry");
+Check(b.LastSelectedEntryId == null && !NotebookCodec.Write(b).Contains("LastSelectedEntryId"),
+    "Other notebook stays independent; absent bookmark does not change old payload shape");
 var copy = NotebookCodec.Read(raw, "card-copy");
 Check(copy.Id != a.Id && copy.Entries[1].Id != a.Entries[1].Id && copy.Entries[1].Body == body, "Copied stack gets independent identities and contents");
 copy.Entries[1].Body = "changed";

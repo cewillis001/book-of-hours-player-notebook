@@ -220,6 +220,20 @@ Existing entries open immediately; an empty notebook offers manual creation with
 creating an entry on open. Font size is session-only. Per-field undo/redo is session-only,
 limited to64 snapshots and reset on selecting a different entry or closing the notebook.
 
+The optional schema1 field LastSelectedEntryId remembers each notebook's last selected
+entry. Selection commits it to the native card, so normal game saves preserve the choice.
+Opening resolves the stable entry UUID rather than its array position; reordering keeps
+the same entry selected. Missing bookmarks (older saves) or missing entries fall back to
+the first remaining entry; empty notebooks stay empty. Copied notebooks remap the bookmark
+alongside their independent entry UUIDs. Deleting the selected entry remembers the adjacent
+replacement chosen by the editor. This records UI state only, not game knowledge or text.
+Isolated live tests on2026-11-01 confirmed selecting a new second entry, closing,
+opening two other notebooks, and reopening the original restores its second entry.
+The empty notebook stayed empty, and the other notebook kept its own text. Native save
+and a full game restart also restored the second entry, with original entry text/IDs/order
+preserved. Reorder, copied-ID remapping and deleted/missing-entry fallback passed model
+checks; those feature-specific cases have not been replayed through the live UI.
+
 Raw native save payload/schema and creation/merge/label/crafting patches are unchanged.
 New Canvas tests have passed normal/fast/paused heartbeat and prior input ownership,
 menu teardown, 1280x720 and1920x1080 fit, Unicode manual input and native JSON preservation.
