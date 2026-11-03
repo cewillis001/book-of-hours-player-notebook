@@ -364,7 +364,17 @@ internal sealed class NotebookTestControls : MonoBehaviour
         {
             NotebookWindow.Instance.Close();
             var axe = Watchman.Get<HornedAxe>();
-            var desk = axe.GetRegisteredSituations().Single(s => s.VerbId == "library.desk.reading.consider");
+            var bindingDesk = axe.GetRegisteredSituations().Single(s => s.VerbId == "library.desk.reading.consider");
+            var colorStation = axe.GetRegisteredSituations().SingleOrDefault(s => s.VerbId == "library.prospect.loggia");
+            if (colorStation == null)
+            {
+                var command = new SituationCreationCommand("library.prospect.loggia").WithVerbId("library.prospect.loggia").AlreadyInState(StateEnum.Unstarted);
+                command.Dominions.Add(new SecretHistories.Commands.SituationCommands.PopulateDominionCommand(
+                    SituationDominionEnum.VerbThresholds, Watchman.Get<Compendium>().GetEntityById<Verb>("library.prospect.loggia").Thresholds));
+                colorStation = (Situation)new TokenCreationCommand(command, new TokenLocation(bindingDesk.Token))
+                    .Execute(Context.Unknown(), bindingDesk.Token.Sphere).Payload;
+                Debug.Log("Notebook test: created native Loggia Prospect situation in isolated fixture; not a room-unlock test");
+            }
             var notebook = axe.GetSpheres().SelectMany(s => s.GetTokens())
                 .First(t => NotebookRebinding.CanRebind(t.Payload) &&
                     NotebookCodec.Read(((ElementStack)t.Payload).GetIllumination(NotebookCodec.IlluminationKey), t.Payload.Id).Entries.Count > 0);
@@ -385,20 +395,31 @@ internal sealed class NotebookTestControls : MonoBehaviour
             };
             foreach (var test in cases)
             {
+                var desk = test.Press ? bindingDesk : colorStation;
                 var level = test.Level;
                 var before = NotebookCodec.Read(card.GetIllumination(NotebookCodec.IlluminationKey), card.Id);
                 var color = test.Press ? before.Color : test.Color;
                 var design = test.Press ? (before.Design == "plain" ? "decorated" : "plain") : before.Design;
                 if (desk.StateIdentifier != StateEnum.Unstarted || desk.GetInteriorSpheres().Any(s => s.Tokens.Count != 0))
-                    throw new InvalidOperationException("Reading desk must be unstarted and empty for test");
+                    throw new InvalidOperationException("Workstation must be unstarted and empty for test: " + desk.VerbId);
                 var storage = desk.GetSingleSphereByCategory(SphereCategory.SituationStorage);
-                var skillCommand = new ElementStackCreationCommand("s.stitching.binding", 1);
+                var skillCommand = new ElementStackCreationCommand(test.Press ? "s.stitching.binding" : "s.inks.containment", 1);
                 skillCommand.Mutations["skill"] = level - 1;
-                skillCommand.Mutations["sky"] = level - 1;
-                skillCommand.Mutations["heart"] = level - 1;
+                skillCommand.Mutations[test.Press ? "sky" : "winter"] = level - 1;
+                skillCommand.Mutations[test.Press ? "heart" : "moon"] = level - 1;
                 var skill = new TokenCreationCommand(skillCommand, new TokenLocation(Vector3.zero, storage)).Execute(Context.Unknown(), storage);
-                var soul = new TokenCreationCommand(new ElementStackCreationCommand("xcho", 1), new TokenLocation(Vector3.zero, storage)).Execute(Context.Unknown(), storage);
+                var soul = new TokenCreationCommand(new ElementStackCreationCommand(test.Press ? "xcho" : "xfet", 1), new TokenLocation(Vector3.zero, storage)).Execute(Context.Unknown(), storage);
                 var slots = desk.GetInteriorSpheres();
+                // Desk paint admission has been removed, even with a notebook present.
+                if (!test.Press)
+                {
+                    var exterior = bindingDesk.Token.Sphere;
+                    var blue = new TokenCreationCommand(new ElementStackCreationCommand("paint.blue", 1), new TokenLocation(Vector3.zero, exterior)).Execute(Context.Unknown(), exterior);
+                    if (!bindingDesk.GetInteriorSpheres().Single(s => s.Id == "i1").TryAcceptToken(notebook, Context.Unknown()))
+                        throw new Exception("Desk rejected notebook during paint admission check");
+                    if (bindingDesk.GetInteriorSpheres().Single(s => s.Id == "i2").CanAcceptToken(blue))
+                        throw new Exception("Desk still admits paint");
+                }
                 foreach (var pair in new[] { new { Id = "s", Token = skill }, new { Id = "a", Token = soul }, new { Id = "i1", Token = notebook } })
                     if (!slots.Single(s => s.Id == pair.Id).TryAcceptToken(pair.Token, Context.Unknown()))
                         throw new Exception("Rebinding desk rejected " + pair.Id);
@@ -426,7 +447,7 @@ internal sealed class NotebookTestControls : MonoBehaviour
                 if ((string)saved["Color"] != color || (string)saved["Design"] != design) throw new Exception("Binding metadata mismatch");
                 saved["Color"] = original["Color"].DeepClone(); saved["Design"] = original["Design"].DeepClone();
                 if (!Newtonsoft.Json.Linq.JToken.DeepEquals(original, saved)) throw new Exception("Rebinding changed document contents");
-                Debug.Log("Notebook rebind PASS: " + color + "/" + design + " skill=" + level + " press=" + test.Press + " same stack/document/entries/bookmark; paint consumed, press retained");
+                Debug.Log("Notebook rebind PASS: " + color + "/" + design + " skill=" + level + " station=" + desk.VerbId + " press=" + test.Press + " same stack/document/entries/bookmark; paint consumed, press retained");
                 desk.Conclude();
                 for (int step = 0; step < 5 && desk.StateIdentifier != StateEnum.Unstarted; step++) desk.ExecuteHeartbeat(0, 0);
             }

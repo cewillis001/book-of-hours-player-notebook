@@ -39,16 +39,18 @@ passed for both tiers, including paper consumption and blank independent outputs
 An in-game audit of 72 Reading Room recipe predictions covered skill levels 1–9,
 paper/no paper, and ink/memory/tool exclusions. Other desks/mod combinations need more coverage.
 
-To recolor an existing notebook, put it in **Papers** at a compatible desk, with
-Stitching & Binding (any level) and a compatible Soul. Put **Paint: Blue**, **Paint: Green**
-or **Paint: Red** in **With**; leave With empty to return to brown. Paint is consumed.
-The current plain/decorated design is preserved, including at skill levels 1–3.
+To recolor an existing notebook, use the **Loggia Prospect** with **Inks of Containment
+(any level)** and a compatible Soul. Put the notebook in the **first + slot**, and **Paint: Blue**,
+**Paint: Green** or **Paint: Red** in the **second + slot**; leave Second + empty for brown.
+Paint is used up. The current plain/decorated design is preserved, including at skill
+levels 1–3. Unlocking the Loggia Prospect is part of the progression; desks do not recolor.
 
-To change the design, use **Stitching & Binding level 4+** and a **Book Press** in With
-instead of paint. This toggles plain ↔ decorated while preserving color; the press is
-returned. Both operations take 60 seconds and fatigue the Soul. They transform the same
-notebook, preserving its title, text, entry order, identities and remembered entry.
-No new paper is needed. Check the recipe preview before starting.
+To change the design, use a compatible **desk**, **Stitching & Binding level 4+**, a
+compatible Soul, the notebook in **Papers**, and a **Book Press** in **With**. This toggles
+plain ↔ decorated while preserving color; the press is returned. Both operations take
+60 seconds and fatigue the Soul. They transform the same notebook, preserving its title,
+text, entry order, identities and remembered entry. No new paper is needed.
+Check the recipe preview before starting.
 See [the rebinding matrix](docs/rebinding.md) for details and verification status.
 
 A new playthrough gets one blank notebook alongside the Lodge's two initial books.

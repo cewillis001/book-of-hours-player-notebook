@@ -3,7 +3,7 @@
     {
       "id": "playernotebook.brown.plain",
       "label": "Untitled Notebook",
-      "desc": "A reusable commonplace book. Double-click to write. At a compatible desk, use Stitching & Binding and a Soul to recolor with Blue, Green or Red paint (or no paint for brown). Use a Book Press at skill level 4+ to change decoration. All writing is preserved.",
+      "desc": "A reusable commonplace book. Double-click to write. Recolor at the Loggia Prospect with Inks of Containment and a compatible Soul: notebook in the first + slot, Blue/Green/Red paint in the second + slot (empty for brown). Change decoration at a compatible desk with Stitching & Binding level 4+ and a Book Press. All writing is preserved.",
       "icon": "playernotebook.brown.plain",
       "manifestationtype": "Book",
       "aspects": {
@@ -25,7 +25,7 @@
     {
       "id": "playernotebook.brown.decorated",
       "label": "Untitled Notebook",
-      "desc": "A reusable commonplace book. Double-click to write. At a compatible desk, use Stitching & Binding and a Soul to recolor with Blue, Green or Red paint (or no paint for brown). Use a Book Press at skill level 4+ to change decoration. All writing is preserved.",
+      "desc": "A reusable commonplace book. Double-click to write. Recolor at the Loggia Prospect with Inks of Containment and a compatible Soul: notebook in the first + slot, Blue/Green/Red paint in the second + slot (empty for brown). Change decoration at a compatible desk with Stitching & Binding level 4+ and a Book Press. All writing is preserved.",
       "icon": "playernotebook.brown.decorated",
       "manifestationtype": "Book",
       "aspects": {
@@ -47,7 +47,7 @@
     {
       "id": "playernotebook.blue.plain",
       "label": "Untitled Notebook",
-      "desc": "A reusable commonplace book. Double-click to write. At a compatible desk, use Stitching & Binding and a Soul to recolor with Blue, Green or Red paint (or no paint for brown). Use a Book Press at skill level 4+ to change decoration. All writing is preserved.",
+      "desc": "A reusable commonplace book. Double-click to write. Recolor at the Loggia Prospect with Inks of Containment and a compatible Soul: notebook in the first + slot, Blue/Green/Red paint in the second + slot (empty for brown). Change decoration at a compatible desk with Stitching & Binding level 4+ and a Book Press. All writing is preserved.",
       "icon": "playernotebook.blue.plain",
       "manifestationtype": "Book",
       "aspects": {
@@ -69,7 +69,7 @@
     {
       "id": "playernotebook.blue.decorated",
       "label": "Untitled Notebook",
-      "desc": "A reusable commonplace book. Double-click to write. At a compatible desk, use Stitching & Binding and a Soul to recolor with Blue, Green or Red paint (or no paint for brown). Use a Book Press at skill level 4+ to change decoration. All writing is preserved.",
+      "desc": "A reusable commonplace book. Double-click to write. Recolor at the Loggia Prospect with Inks of Containment and a compatible Soul: notebook in the first + slot, Blue/Green/Red paint in the second + slot (empty for brown). Change decoration at a compatible desk with Stitching & Binding level 4+ and a Book Press. All writing is preserved.",
       "icon": "playernotebook.blue.decorated",
       "manifestationtype": "Book",
       "aspects": {
@@ -91,7 +91,7 @@
     {
       "id": "playernotebook.green.plain",
       "label": "Untitled Notebook",
-      "desc": "A reusable commonplace book. Double-click to write. At a compatible desk, use Stitching & Binding and a Soul to recolor with Blue, Green or Red paint (or no paint for brown). Use a Book Press at skill level 4+ to change decoration. All writing is preserved.",
+      "desc": "A reusable commonplace book. Double-click to write. Recolor at the Loggia Prospect with Inks of Containment and a compatible Soul: notebook in the first + slot, Blue/Green/Red paint in the second + slot (empty for brown). Change decoration at a compatible desk with Stitching & Binding level 4+ and a Book Press. All writing is preserved.",
       "icon": "playernotebook.green.plain",
       "manifestationtype": "Book",
       "aspects": {
@@ -113,7 +113,7 @@
     {
       "id": "playernotebook.green.decorated",
       "label": "Untitled Notebook",
-      "desc": "A reusable commonplace book. Double-click to write. At a compatible desk, use Stitching & Binding and a Soul to recolor with Blue, Green or Red paint (or no paint for brown). Use a Book Press at skill level 4+ to change decoration. All writing is preserved.",
+      "desc": "A reusable commonplace book. Double-click to write. Recolor at the Loggia Prospect with Inks of Containment and a compatible Soul: notebook in the first + slot, Blue/Green/Red paint in the second + slot (empty for brown). Change decoration at a compatible desk with Stitching & Binding level 4+ and a Book Press. All writing is preserved.",
       "icon": "playernotebook.green.decorated",
       "manifestationtype": "Book",
       "aspects": {
@@ -135,7 +135,7 @@
     {
       "id": "playernotebook.red.plain",
       "label": "Untitled Notebook",
-      "desc": "A reusable commonplace book. Double-click to write. At a compatible desk, use Stitching & Binding and a Soul to recolor with Blue, Green or Red paint (or no paint for brown). Use a Book Press at skill level 4+ to change decoration. All writing is preserved.",
+      "desc": "A reusable commonplace book. Double-click to write. Recolor at the Loggia Prospect with Inks of Containment and a compatible Soul: notebook in the first + slot, Blue/Green/Red paint in the second + slot (empty for brown). Change decoration at a compatible desk with Stitching & Binding level 4+ and a Book Press. All writing is preserved.",
       "icon": "playernotebook.red.plain",
       "manifestationtype": "Book",
       "aspects": {
@@ -157,7 +157,7 @@
     {
       "id": "playernotebook.red.decorated",
       "label": "Untitled Notebook",
-      "desc": "A reusable commonplace book. Double-click to write. At a compatible desk, use Stitching & Binding and a Soul to recolor with Blue, Green or Red paint (or no paint for brown). Use a Book Press at skill level 4+ to change decoration. All writing is preserved.",
+      "desc": "A reusable commonplace book. Double-click to write. Recolor at the Loggia Prospect with Inks of Containment and a compatible Soul: notebook in the first + slot, Blue/Green/Red paint in the second + slot (empty for brown). Change decoration at a compatible desk with Stitching & Binding level 4+ and a Book Press. All writing is preserved.",
       "icon": "playernotebook.red.decorated",
       "manifestationtype": "Book",
       "aspects": {

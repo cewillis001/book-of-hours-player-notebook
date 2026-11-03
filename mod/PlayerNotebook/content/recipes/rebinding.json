@@ -2,13 +2,12 @@
   "recipes": [
     {
       "id": "playernotebook.rebind.color.brown.plain",
-      "actionid": "library.desk.*",
+      "actionid": "library.prospect.loggia",
       "label": "Recolor: Brown (plain)",
-      "startdescription": "Change the cover to brown; keep its plain design and all writing. [Stitching & Binding level 1 or higher. No paper, ink, tools or memories. Leave With empty for brown.]",
+      "startdescription": "Change the cover to brown; keep its plain design and all writing. [Inks of Containment level 1 or higher. No paper, ink, tools or memories. Leave the second + slot empty for brown.] Put the notebook in the first + slot; put paint in the second + slot.",
       "desc": "A new color; the same words within.",
       "reqs": {
         "ability": 1,
-        "s.stitching.binding": 1,
         "skill": 1,
         "notebook.bindable": 1,
         "notebook.plain": 1,
@@ -17,7 +16,8 @@
         "tool": -1,
         "memory": -1,
         "readable": -1,
-        "pigment": -1
+        "pigment": -1,
+        "s.inks.containment": 1
       },
       "effects": {},
       "aspects": {
@@ -29,13 +29,12 @@
     },
     {
       "id": "playernotebook.rebind.color.brown.decorated",
-      "actionid": "library.desk.*",
+      "actionid": "library.prospect.loggia",
       "label": "Recolor: Brown (decorated)",
-      "startdescription": "Change the cover to brown; keep its decorated design and all writing. [Stitching & Binding level 1 or higher. No paper, ink, tools or memories. Leave With empty for brown.]",
+      "startdescription": "Change the cover to brown; keep its decorated design and all writing. [Inks of Containment level 1 or higher. No paper, ink, tools or memories. Leave the second + slot empty for brown.] Put the notebook in the first + slot; put paint in the second + slot.",
       "desc": "A new color; the same words within.",
       "reqs": {
         "ability": 1,
-        "s.stitching.binding": 1,
         "skill": 1,
         "notebook.bindable": 1,
         "notebook.decorated": 1,
@@ -44,7 +43,8 @@
         "tool": -1,
         "memory": -1,
         "readable": -1,
-        "pigment": -1
+        "pigment": -1,
+        "s.inks.containment": 1
       },
       "effects": {},
       "aspects": {
@@ -56,13 +56,12 @@
     },
     {
       "id": "playernotebook.rebind.color.blue.plain",
-      "actionid": "library.desk.*",
+      "actionid": "library.prospect.loggia",
       "label": "Recolor: Blue (plain)",
-      "startdescription": "Change the cover to blue; keep its plain design and all writing. [Stitching & Binding level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Blue.]",
+      "startdescription": "Change the cover to blue; keep its plain design and all writing. [Inks of Containment level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Blue.] Put the notebook in the first + slot; put paint in the second + slot.",
       "desc": "A new color; the same words within.",
       "reqs": {
         "ability": 1,
-        "s.stitching.binding": 1,
         "skill": 1,
         "notebook.bindable": 1,
         "notebook.plain": 1,
@@ -73,7 +72,8 @@
         "readable": -1,
         "paint.blue": 1,
         "paint.green": -1,
-        "paint.red": -1
+        "paint.red": -1,
+        "s.inks.containment": 1
       },
       "effects": {
         "paint.blue": -1
@@ -87,13 +87,12 @@
     },
     {
       "id": "playernotebook.rebind.color.blue.decorated",
-      "actionid": "library.desk.*",
+      "actionid": "library.prospect.loggia",
       "label": "Recolor: Blue (decorated)",
-      "startdescription": "Change the cover to blue; keep its decorated design and all writing. [Stitching & Binding level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Blue.]",
+      "startdescription": "Change the cover to blue; keep its decorated design and all writing. [Inks of Containment level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Blue.] Put the notebook in the first + slot; put paint in the second + slot.",
       "desc": "A new color; the same words within.",
       "reqs": {
         "ability": 1,
-        "s.stitching.binding": 1,
         "skill": 1,
         "notebook.bindable": 1,
         "notebook.decorated": 1,
@@ -104,7 +103,8 @@
         "readable": -1,
         "paint.blue": 1,
         "paint.green": -1,
-        "paint.red": -1
+        "paint.red": -1,
+        "s.inks.containment": 1
       },
       "effects": {
         "paint.blue": -1
@@ -118,13 +118,12 @@
     },
     {
       "id": "playernotebook.rebind.color.green.plain",
-      "actionid": "library.desk.*",
+      "actionid": "library.prospect.loggia",
       "label": "Recolor: Green (plain)",
-      "startdescription": "Change the cover to green; keep its plain design and all writing. [Stitching & Binding level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Green.]",
+      "startdescription": "Change the cover to green; keep its plain design and all writing. [Inks of Containment level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Green.] Put the notebook in the first + slot; put paint in the second + slot.",
       "desc": "A new color; the same words within.",
       "reqs": {
         "ability": 1,
-        "s.stitching.binding": 1,
         "skill": 1,
         "notebook.bindable": 1,
         "notebook.plain": 1,
@@ -135,7 +134,8 @@
         "readable": -1,
         "paint.blue": -1,
         "paint.green": 1,
-        "paint.red": -1
+        "paint.red": -1,
+        "s.inks.containment": 1
       },
       "effects": {
         "paint.green": -1
@@ -149,13 +149,12 @@
     },
     {
       "id": "playernotebook.rebind.color.green.decorated",
-      "actionid": "library.desk.*",
+      "actionid": "library.prospect.loggia",
       "label": "Recolor: Green (decorated)",
-      "startdescription": "Change the cover to green; keep its decorated design and all writing. [Stitching & Binding level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Green.]",
+      "startdescription": "Change the cover to green; keep its decorated design and all writing. [Inks of Containment level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Green.] Put the notebook in the first + slot; put paint in the second + slot.",
       "desc": "A new color; the same words within.",
       "reqs": {
         "ability": 1,
-        "s.stitching.binding": 1,
         "skill": 1,
         "notebook.bindable": 1,
         "notebook.decorated": 1,
@@ -166,7 +165,8 @@
         "readable": -1,
         "paint.blue": -1,
         "paint.green": 1,
-        "paint.red": -1
+        "paint.red": -1,
+        "s.inks.containment": 1
       },
       "effects": {
         "paint.green": -1
@@ -180,13 +180,12 @@
     },
     {
       "id": "playernotebook.rebind.color.red.plain",
-      "actionid": "library.desk.*",
+      "actionid": "library.prospect.loggia",
       "label": "Recolor: Red (plain)",
-      "startdescription": "Change the cover to red; keep its plain design and all writing. [Stitching & Binding level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Red.]",
+      "startdescription": "Change the cover to red; keep its plain design and all writing. [Inks of Containment level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Red.] Put the notebook in the first + slot; put paint in the second + slot.",
       "desc": "A new color; the same words within.",
       "reqs": {
         "ability": 1,
-        "s.stitching.binding": 1,
         "skill": 1,
         "notebook.bindable": 1,
         "notebook.plain": 1,
@@ -197,7 +196,8 @@
         "readable": -1,
         "paint.blue": -1,
         "paint.green": -1,
-        "paint.red": 1
+        "paint.red": 1,
+        "s.inks.containment": 1
       },
       "effects": {
         "paint.red": -1
@@ -211,13 +211,12 @@
     },
     {
       "id": "playernotebook.rebind.color.red.decorated",
-      "actionid": "library.desk.*",
+      "actionid": "library.prospect.loggia",
       "label": "Recolor: Red (decorated)",
-      "startdescription": "Change the cover to red; keep its decorated design and all writing. [Stitching & Binding level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Red.]",
+      "startdescription": "Change the cover to red; keep its decorated design and all writing. [Inks of Containment level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Red.] Put the notebook in the first + slot; put paint in the second + slot.",
       "desc": "A new color; the same words within.",
       "reqs": {
         "ability": 1,
-        "s.stitching.binding": 1,
         "skill": 1,
         "notebook.bindable": 1,
         "notebook.decorated": 1,
@@ -228,7 +227,8 @@
         "readable": -1,
         "paint.blue": -1,
         "paint.green": -1,
-        "paint.red": 1
+        "paint.red": 1,
+        "s.inks.containment": 1
       },
       "effects": {
         "paint.red": -1

@@ -323,3 +323,29 @@ across the three documents. Full exit/restart plus another native save retained 
 three saved payloads exactly. Physical double-click on the blue book opened its original
 Unicode title and multiline entry. Other desks/mods and physical ingredient drag/drop
 remain unverified.
+
+## Recoloring workstation separation — Loggia Prospect, 2026-11-03
+
+User selected the Loggia Prospect and accepted its
+room-unlock progression. Its actual verb is library.prospect.loggia, accepting Moon/Rose
+Souls and skills. Inks of Containment has Winter 2 / Moon 1 and fits through Moon;
+Stitching & Binding has no matching principle. Recoloring now requires Inks of Containment
+level 1+ exclusively at the Loggia. The first + slot (i1) holds the notebook, the second
++ slot (i2) accepts pigment natively. An empty second + slot restores brown.
+
+Only valid notebook admission in Loggia i1 is added. The earlier desk paint exception
+is removed entirely. Desk notebook admission remains for the level 4+ Stitching & Binding
+and Book Press design recipes. Paper creation, binding metadata, transformation and
+save schema are unchanged. Named paint mappings and four-color artwork are unchanged.
+
+Offline model/native checks pass, including color/design action scope, rejection of
+Stitching & Binding for recoloring, and the existing identity/payload regressions.
+Isolated testing passed eight recoloring executions at Loggia with Inks of Containment
+and Fet, and two design changes at the Reading Room desk with Stitching & Binding and
+Chor. Each step retained native token/stack/document/entry identity, quantity, complete
+text/order and bookmark. Paint rejection at a desk with a notebook present passed eight
+times. Native save changed only one Color field across the three original notebook
+documents; all other fields and both uninvolved notebooks matched exactly.
+The fixture creates a native Loggia situation with its actual Verb.Thresholds; this
+verifies the workstation API, not room unlocking or a manually timed craft. The native
+WindGust window-hide sound warning is nonfatal. A full exit/restart and native save retained all three raw notebook payloads exactly. Physical double-click opened the original title and multiline entry.

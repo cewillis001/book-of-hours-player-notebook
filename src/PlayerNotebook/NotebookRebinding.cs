@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using HarmonyLib;
 using PlayerNotebooks;
 using SecretHistories.Abstract;
@@ -10,8 +9,6 @@ using UnityEngine;
 
 internal static class NotebookRebinding
 {
-    internal static bool IsPaint(string id) => id == "paint.blue" || id == "paint.green" || id == "paint.red";
-
     internal static bool CanRebind(ITokenPayload payload)
     {
         if (!(payload is ElementStack card) || card.Defunct || card.Quantity != 1 ||
@@ -21,20 +18,17 @@ internal static class NotebookRebinding
     }
 }
 
-// Broaden only our notebooks' desk inputs. Native state, capacity and movement checks
-// still run; ordinary paper/ink/tool inputs and every other workstation are untouched.
+// Accept notebooks only at the binding desk and pigment workstation. Pigment admission
+// is native; state, capacity and movement checks still run for both workstations.
 [HarmonyPatch(typeof(Sphere), nameof(Sphere.GetMatchForTokenPayload))]
-internal static class NotebookDeskSlotPatch
+internal static class NotebookBindingSlotPatch
 {
     static void Postfix(Sphere __instance, ITokenPayload payload, ref ContainerMatchForStack __result)
     {
-        if (!(__instance.GetContainer() is Situation desk) ||
-            !desk.VerbId.StartsWith("library.desk.", StringComparison.Ordinal)) return;
-        if (__instance.Id == "i1" && NotebookRebinding.CanRebind(payload))
-            __result = ContainerMatchForStack.MatchOK();
-        if (__instance.Id == "i2" && payload != null && NotebookRebinding.IsPaint(payload.EntityId) &&
-            desk.GetInteriorSpheres().Where(s => s.Id == "i1").SelectMany(s => s.GetTokens())
-                .Any(t => NotebookRebinding.CanRebind(t.Payload)))
+        if (!(__instance.GetContainer() is Situation station)) return;
+        var bindingSlot = station.VerbId?.StartsWith("library.desk.", StringComparison.Ordinal) == true && __instance.Id == "i1";
+        var colorSlot = station.VerbId == "library.prospect.loggia" && __instance.Id == "i1";
+        if ((bindingSlot || colorSlot) && NotebookRebinding.CanRebind(payload))
             __result = ContainerMatchForStack.MatchOK();
     }
 }
