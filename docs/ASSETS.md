@@ -14,8 +14,10 @@ Packaged mod directory: `images/books/`.
 - `playernotebook.brown.plain_.png` — plain spine.
 - `playernotebook.brown.decorated.png` — decorated cover.
 - `playernotebook.brown.decorated_.png` — decorated spine.
+- The same four filenames with `brown` replaced by `blue`, `green` or `red` —
+  matching plain/decorated covers and spines in the other three palettes.
 
-These four images are original geometric drawings made with System.Drawing by
+These sixteen images are original geometric drawings made with System.Drawing by
 `scripts/render-bindings.ps1`. The script draws coloured backgrounds, borders,
 binding lines and diamond ornaments. It reads no game or third-party images.
 Its source code is licensed under 0BSD; the resulting artwork is dedicated under CC0.

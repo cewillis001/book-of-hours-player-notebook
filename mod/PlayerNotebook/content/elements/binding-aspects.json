@@ -1,0 +1,81 @@
+{
+  "elements": [
+    {
+      "id": "notebook.bindable",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.plain",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.decorated",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.brown.plain",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.brown.decorated",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.blue.plain",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.blue.decorated",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.green.plain",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.green.decorated",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.red.plain",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.red.decorated",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    }
+  ]
+}

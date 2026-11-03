@@ -3,6 +3,13 @@ $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
 $destination = Join-Path (Split-Path -Parent $PSScriptRoot) 'mod/PlayerNotebook/images/books'
 New-Item -ItemType Directory -Path $destination -Force | Out-Null
+$palettes = @{
+    brown = @('#543623', '#2e2018', '#ad8652')
+    blue = @('#294b67', '#182c40', '#8cabc0')
+    green = @('#345740', '#203729', '#92ae80')
+    red = @('#783e3e', '#472629', '#c2917d')
+}
+foreach ($colorName in @('brown', 'blue', 'green', 'red')) {
 foreach ($decorated in @($false, $true)) {
     foreach ($spine in @($false, $true)) {
         $width = if ($spine) { 48 } else { 256 }
@@ -13,9 +20,10 @@ foreach ($decorated in @($false, $true)) {
         $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
         $graphics.ScaleTransform(0.5, 0.5)
         $graphics.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
-        $graphics.Clear([System.Drawing.ColorTranslator]::FromHtml('#543623'))
-        $edge = [System.Drawing.Pen]::new([System.Drawing.ColorTranslator]::FromHtml('#2e2018'), 5)
-        $thread = [System.Drawing.Pen]::new([System.Drawing.ColorTranslator]::FromHtml('#ad8652'), 2)
+        $palette = $palettes[$colorName]
+        $graphics.Clear([System.Drawing.ColorTranslator]::FromHtml($palette[0]))
+        $edge = [System.Drawing.Pen]::new([System.Drawing.ColorTranslator]::FromHtml($palette[1]), 5)
+        $thread = [System.Drawing.Pen]::new([System.Drawing.ColorTranslator]::FromHtml($palette[2]), 2)
         $gold = [System.Drawing.Pen]::new([System.Drawing.ColorTranslator]::FromHtml('#d4b36a'), 3)
         $graphics.DrawRectangle($edge, 3, 3, ($width - 6), ($height - 6))
         $graphics.DrawRectangle($thread, 10, 12, ($width - 20), ($height - 24))
@@ -39,7 +47,8 @@ foreach ($decorated in @($false, $true)) {
         }
         $design = if ($decorated) { 'decorated' } else { 'plain' }
         $suffix = if ($spine) { '_' } else { '' }
-        $bitmap.Save((Join-Path $destination "playernotebook.brown.$design$suffix.png"), [System.Drawing.Imaging.ImageFormat]::Png)
+        $bitmap.Save((Join-Path $destination "playernotebook.$colorName.$design$suffix.png"), [System.Drawing.Imaging.ImageFormat]::Png)
         $gold.Dispose(); $thread.Dispose(); $edge.Dispose(); $graphics.Dispose(); $bitmap.Dispose()
     }
+}
 }

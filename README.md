@@ -10,7 +10,7 @@ Verified behavior and remaining checks are in [docs/manual-tests.md](docs/manual
 ## Implemented prototype
 
 - FEATHER-native DLL entry point; no BepInEx installation.
-- Physical notebooks with original brown covers and spines, in plain and decorated designs.
+- Physical notebooks with original brown, blue, green and red covers/spines, in plain and decorated designs.
 - Double-click opens a book-style editor with a left entry index, title, optional headings,
   multiline writing area, reorder controls and deletion confirmation. The editor scales
   with screen height and width; A−/A+ adjust writing text. Existing notes open immediately.
@@ -39,10 +39,22 @@ passed for both tiers, including paper consumption and blank independent outputs
 An in-game audit of 72 Reading Room recipe predictions covered skill levels 1–9,
 paper/no paper, and ink/memory/tool exclusions. Other desks/mod combinations need more coverage.
 
+To recolor an existing notebook, put it in **Papers** at a compatible desk, with
+Stitching & Binding (any level) and a compatible Soul. Put **Paint: Blue**, **Paint: Green**
+or **Paint: Red** in **With**; leave With empty to return to brown. Paint is consumed.
+The current plain/decorated design is preserved, including at skill levels 1–3.
+
+To change the design, use **Stitching & Binding level 4+** and a **Book Press** in With
+instead of paint. This toggles plain ↔ decorated while preserving color; the press is
+returned. Both operations take 60 seconds and fatigue the Soul. They transform the same
+notebook, preserving its title, text, entry order, identities and remembered entry.
+No new paper is needed. Check the recipe preview before starting.
+See [the rebinding matrix](docs/rebinding.md) for details and verification status.
+
 A new playthrough gets one blank notebook alongside the Lodge's two initial books.
 Native room setup testing preserved the original books and placed exactly one blank,
 usable notebook on the Lodge shelf. The test revealed the room directly; the entire
-opening journey has not been replayed manually. Existing playthroughs use crafting. Broader colors, release
+opening journey has not been replayed manually. Existing playthroughs use crafting. Release
 polish and update/uninstall recovery tests remain outstanding. Short/long playthrough switching retained exact text and identity with no editor/input leak.
 
 ## Build

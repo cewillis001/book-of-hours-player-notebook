@@ -65,6 +65,8 @@ internal static class NotebookRecipePriorityPatch
         // Removing paper or adding optional inputs retains vanilla recipe selection.
         if (__instance.Id == "playernotebook.craft.brown.plain" ||
             __instance.Id == "playernotebook.craft.brown.decorated") __result = 2;
+        if (__instance.Id?.StartsWith("playernotebook.rebind.", StringComparison.Ordinal) == true)
+            __result = __instance.Craftable ? 2 : -1;
     }
 }
 

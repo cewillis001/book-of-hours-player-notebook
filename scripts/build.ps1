@@ -17,7 +17,10 @@ try {
     Copy-Item -LiteralPath "$repo\src\PlayerNotebook\bin\Release\net472\PlayerNotebook.dll" -Destination "$modDir\dll"
     Copy-Item -LiteralPath "$repo\src\PlayerNotebook\bin\Release\net472\0Harmony.dll" -Destination "$modDir\dll"
     Copy-Item -LiteralPath "$repo\README.md" -Destination $modDir
+    $packagedReadme = Join-Path $modDir 'README.md'
+    [IO.File]::WriteAllText($packagedReadme, (Get-Content -LiteralPath $packagedReadme -Raw).Replace('(docs/rebinding.md)', '(rebinding.md)'))
     Copy-Item -LiteralPath "$repo\docs\manual-tests.md" -Destination $modDir
+    Copy-Item -LiteralPath "$repo\docs\rebinding.md" -Destination $modDir
     Copy-Item -LiteralPath "$repo\docs\THIRD-PARTY-NOTICES.md" -Destination $modDir
     Copy-Item -LiteralPath "$repo\LICENSE" -Destination $modDir
     Copy-Item -LiteralPath "$repo\docs\ASSETS.md" -Destination $modDir

@@ -3,18 +3,178 @@
     {
       "id": "playernotebook.brown.plain",
       "label": "Untitled Notebook",
-      "desc": "A blank commonplace book. Double-click to write your own notes.",
+      "desc": "A reusable commonplace book. Double-click to write. At a compatible desk, use Stitching & Binding and a Soul to recolor with Blue, Green or Red paint (or no paint for brown). Use a Book Press at skill level 4+ to change decoration. All writing is preserved.",
       "icon": "playernotebook.brown.plain",
       "manifestationtype": "Book",
-      "aspects": {"thing": 1}
+      "aspects": {
+        "thing": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1
+      },
+      "xtriggers": {
+        "notebook.rebind.brown.plain": "playernotebook.brown.plain",
+        "notebook.rebind.brown.decorated": "playernotebook.brown.decorated",
+        "notebook.rebind.blue.plain": "playernotebook.blue.plain",
+        "notebook.rebind.blue.decorated": "playernotebook.blue.decorated",
+        "notebook.rebind.green.plain": "playernotebook.green.plain",
+        "notebook.rebind.green.decorated": "playernotebook.green.decorated",
+        "notebook.rebind.red.plain": "playernotebook.red.plain",
+        "notebook.rebind.red.decorated": "playernotebook.red.decorated"
+      }
     },
     {
       "id": "playernotebook.brown.decorated",
       "label": "Untitled Notebook",
-      "desc": "A commonplace book with a worked binding. Double-click to write your own notes.",
+      "desc": "A reusable commonplace book. Double-click to write. At a compatible desk, use Stitching & Binding and a Soul to recolor with Blue, Green or Red paint (or no paint for brown). Use a Book Press at skill level 4+ to change decoration. All writing is preserved.",
       "icon": "playernotebook.brown.decorated",
       "manifestationtype": "Book",
-      "aspects": {"thing": 1}
+      "aspects": {
+        "thing": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1
+      },
+      "xtriggers": {
+        "notebook.rebind.brown.plain": "playernotebook.brown.plain",
+        "notebook.rebind.brown.decorated": "playernotebook.brown.decorated",
+        "notebook.rebind.blue.plain": "playernotebook.blue.plain",
+        "notebook.rebind.blue.decorated": "playernotebook.blue.decorated",
+        "notebook.rebind.green.plain": "playernotebook.green.plain",
+        "notebook.rebind.green.decorated": "playernotebook.green.decorated",
+        "notebook.rebind.red.plain": "playernotebook.red.plain",
+        "notebook.rebind.red.decorated": "playernotebook.red.decorated"
+      }
+    },
+    {
+      "id": "playernotebook.blue.plain",
+      "label": "Untitled Notebook",
+      "desc": "A reusable commonplace book. Double-click to write. At a compatible desk, use Stitching & Binding and a Soul to recolor with Blue, Green or Red paint (or no paint for brown). Use a Book Press at skill level 4+ to change decoration. All writing is preserved.",
+      "icon": "playernotebook.blue.plain",
+      "manifestationtype": "Book",
+      "aspects": {
+        "thing": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1
+      },
+      "xtriggers": {
+        "notebook.rebind.brown.plain": "playernotebook.brown.plain",
+        "notebook.rebind.brown.decorated": "playernotebook.brown.decorated",
+        "notebook.rebind.blue.plain": "playernotebook.blue.plain",
+        "notebook.rebind.blue.decorated": "playernotebook.blue.decorated",
+        "notebook.rebind.green.plain": "playernotebook.green.plain",
+        "notebook.rebind.green.decorated": "playernotebook.green.decorated",
+        "notebook.rebind.red.plain": "playernotebook.red.plain",
+        "notebook.rebind.red.decorated": "playernotebook.red.decorated"
+      }
+    },
+    {
+      "id": "playernotebook.blue.decorated",
+      "label": "Untitled Notebook",
+      "desc": "A reusable commonplace book. Double-click to write. At a compatible desk, use Stitching & Binding and a Soul to recolor with Blue, Green or Red paint (or no paint for brown). Use a Book Press at skill level 4+ to change decoration. All writing is preserved.",
+      "icon": "playernotebook.blue.decorated",
+      "manifestationtype": "Book",
+      "aspects": {
+        "thing": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1
+      },
+      "xtriggers": {
+        "notebook.rebind.brown.plain": "playernotebook.brown.plain",
+        "notebook.rebind.brown.decorated": "playernotebook.brown.decorated",
+        "notebook.rebind.blue.plain": "playernotebook.blue.plain",
+        "notebook.rebind.blue.decorated": "playernotebook.blue.decorated",
+        "notebook.rebind.green.plain": "playernotebook.green.plain",
+        "notebook.rebind.green.decorated": "playernotebook.green.decorated",
+        "notebook.rebind.red.plain": "playernotebook.red.plain",
+        "notebook.rebind.red.decorated": "playernotebook.red.decorated"
+      }
+    },
+    {
+      "id": "playernotebook.green.plain",
+      "label": "Untitled Notebook",
+      "desc": "A reusable commonplace book. Double-click to write. At a compatible desk, use Stitching & Binding and a Soul to recolor with Blue, Green or Red paint (or no paint for brown). Use a Book Press at skill level 4+ to change decoration. All writing is preserved.",
+      "icon": "playernotebook.green.plain",
+      "manifestationtype": "Book",
+      "aspects": {
+        "thing": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1
+      },
+      "xtriggers": {
+        "notebook.rebind.brown.plain": "playernotebook.brown.plain",
+        "notebook.rebind.brown.decorated": "playernotebook.brown.decorated",
+        "notebook.rebind.blue.plain": "playernotebook.blue.plain",
+        "notebook.rebind.blue.decorated": "playernotebook.blue.decorated",
+        "notebook.rebind.green.plain": "playernotebook.green.plain",
+        "notebook.rebind.green.decorated": "playernotebook.green.decorated",
+        "notebook.rebind.red.plain": "playernotebook.red.plain",
+        "notebook.rebind.red.decorated": "playernotebook.red.decorated"
+      }
+    },
+    {
+      "id": "playernotebook.green.decorated",
+      "label": "Untitled Notebook",
+      "desc": "A reusable commonplace book. Double-click to write. At a compatible desk, use Stitching & Binding and a Soul to recolor with Blue, Green or Red paint (or no paint for brown). Use a Book Press at skill level 4+ to change decoration. All writing is preserved.",
+      "icon": "playernotebook.green.decorated",
+      "manifestationtype": "Book",
+      "aspects": {
+        "thing": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1
+      },
+      "xtriggers": {
+        "notebook.rebind.brown.plain": "playernotebook.brown.plain",
+        "notebook.rebind.brown.decorated": "playernotebook.brown.decorated",
+        "notebook.rebind.blue.plain": "playernotebook.blue.plain",
+        "notebook.rebind.blue.decorated": "playernotebook.blue.decorated",
+        "notebook.rebind.green.plain": "playernotebook.green.plain",
+        "notebook.rebind.green.decorated": "playernotebook.green.decorated",
+        "notebook.rebind.red.plain": "playernotebook.red.plain",
+        "notebook.rebind.red.decorated": "playernotebook.red.decorated"
+      }
+    },
+    {
+      "id": "playernotebook.red.plain",
+      "label": "Untitled Notebook",
+      "desc": "A reusable commonplace book. Double-click to write. At a compatible desk, use Stitching & Binding and a Soul to recolor with Blue, Green or Red paint (or no paint for brown). Use a Book Press at skill level 4+ to change decoration. All writing is preserved.",
+      "icon": "playernotebook.red.plain",
+      "manifestationtype": "Book",
+      "aspects": {
+        "thing": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1
+      },
+      "xtriggers": {
+        "notebook.rebind.brown.plain": "playernotebook.brown.plain",
+        "notebook.rebind.brown.decorated": "playernotebook.brown.decorated",
+        "notebook.rebind.blue.plain": "playernotebook.blue.plain",
+        "notebook.rebind.blue.decorated": "playernotebook.blue.decorated",
+        "notebook.rebind.green.plain": "playernotebook.green.plain",
+        "notebook.rebind.green.decorated": "playernotebook.green.decorated",
+        "notebook.rebind.red.plain": "playernotebook.red.plain",
+        "notebook.rebind.red.decorated": "playernotebook.red.decorated"
+      }
+    },
+    {
+      "id": "playernotebook.red.decorated",
+      "label": "Untitled Notebook",
+      "desc": "A reusable commonplace book. Double-click to write. At a compatible desk, use Stitching & Binding and a Soul to recolor with Blue, Green or Red paint (or no paint for brown). Use a Book Press at skill level 4+ to change decoration. All writing is preserved.",
+      "icon": "playernotebook.red.decorated",
+      "manifestationtype": "Book",
+      "aspects": {
+        "thing": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1
+      },
+      "xtriggers": {
+        "notebook.rebind.brown.plain": "playernotebook.brown.plain",
+        "notebook.rebind.brown.decorated": "playernotebook.brown.decorated",
+        "notebook.rebind.blue.plain": "playernotebook.blue.plain",
+        "notebook.rebind.blue.decorated": "playernotebook.blue.decorated",
+        "notebook.rebind.green.plain": "playernotebook.green.plain",
+        "notebook.rebind.green.decorated": "playernotebook.green.decorated",
+        "notebook.rebind.red.plain": "playernotebook.red.plain",
+        "notebook.rebind.red.decorated": "playernotebook.red.decorated"
+      }
     }
   ]
 }

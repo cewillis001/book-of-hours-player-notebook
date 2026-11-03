@@ -128,6 +128,7 @@ internal sealed class NotebookTestControls : MonoBehaviour
         if (GUILayout.Button("Test native shelving and unchanged notebook data")) StartCoroutine(CheckShelving());
         if (GUILayout.Button("Switch fixtures with editor open (long / moved short)")) StartCoroutine(CheckFixtureSwitch());
         if (GUILayout.Button("Audit loaded vanilla recipe predictions")) CheckRecipePredictions();
+        if (GUILayout.Button("Test rebinding written notebook through all colors/tiers")) TestRebinding();
         GUILayout.Label(status);
         GUILayout.EndArea();
     }
@@ -357,6 +358,83 @@ internal sealed class NotebookTestControls : MonoBehaviour
         }
     }
     private int next;
+    private void TestRebinding()
+    {
+        try
+        {
+            NotebookWindow.Instance.Close();
+            var axe = Watchman.Get<HornedAxe>();
+            var desk = axe.GetRegisteredSituations().Single(s => s.VerbId == "library.desk.reading.consider");
+            var notebook = axe.GetSpheres().SelectMany(s => s.GetTokens())
+                .First(t => NotebookRebinding.CanRebind(t.Payload) &&
+                    NotebookCodec.Read(((ElementStack)t.Payload).GetIllumination(NotebookCodec.IlluminationKey), t.Payload.Id).Entries.Count > 0);
+            var card = (ElementStack)notebook.Payload;
+            var stackId = card.Id;
+            var original = Newtonsoft.Json.Linq.JObject.Parse(card.GetIllumination(NotebookCodec.IlluminationKey));
+            var cases = new[] {
+                new { Level = 1, Color = "blue", Press = false },
+                new { Level = 1, Color = "green", Press = false },
+                new { Level = 1, Color = "red", Press = false },
+                new { Level = 4, Color = "", Press = true },
+                new { Level = 1, Color = "blue", Press = false },
+                new { Level = 1, Color = "green", Press = false },
+                new { Level = 1, Color = "brown", Press = false },
+                new { Level = 4, Color = "red", Press = false },
+                new { Level = 4, Color = "", Press = true },
+                new { Level = 1, Color = "blue", Press = false }
+            };
+            foreach (var test in cases)
+            {
+                var level = test.Level;
+                var before = NotebookCodec.Read(card.GetIllumination(NotebookCodec.IlluminationKey), card.Id);
+                var color = test.Press ? before.Color : test.Color;
+                var design = test.Press ? (before.Design == "plain" ? "decorated" : "plain") : before.Design;
+                if (desk.StateIdentifier != StateEnum.Unstarted || desk.GetInteriorSpheres().Any(s => s.Tokens.Count != 0))
+                    throw new InvalidOperationException("Reading desk must be unstarted and empty for test");
+                var storage = desk.GetSingleSphereByCategory(SphereCategory.SituationStorage);
+                var skillCommand = new ElementStackCreationCommand("s.stitching.binding", 1);
+                skillCommand.Mutations["skill"] = level - 1;
+                skillCommand.Mutations["sky"] = level - 1;
+                skillCommand.Mutations["heart"] = level - 1;
+                var skill = new TokenCreationCommand(skillCommand, new TokenLocation(Vector3.zero, storage)).Execute(Context.Unknown(), storage);
+                var soul = new TokenCreationCommand(new ElementStackCreationCommand("xcho", 1), new TokenLocation(Vector3.zero, storage)).Execute(Context.Unknown(), storage);
+                var slots = desk.GetInteriorSpheres();
+                foreach (var pair in new[] { new { Id = "s", Token = skill }, new { Id = "a", Token = soul }, new { Id = "i1", Token = notebook } })
+                    if (!slots.Single(s => s.Id == pair.Id).TryAcceptToken(pair.Token, Context.Unknown()))
+                        throw new Exception("Rebinding desk rejected " + pair.Id);
+                Token paint = null;
+                if (test.Press || color != "brown")
+                {
+                    paint = new TokenCreationCommand(new ElementStackCreationCommand(test.Press ? "book.press" : "paint." + color, 1), new TokenLocation(Vector3.zero, storage)).Execute(Context.Unknown(), storage);
+                    if (!slots.Single(s => s.Id == "i2").TryAcceptToken(paint, Context.Unknown()))
+                        throw new Exception("Rebinding desk rejected paint " + color);
+                }
+                desk.UpdateRecipePrediction();
+                var expected = "playernotebook.rebind." + (test.Press ? "design." : "color.") + color + "." + design;
+                if (desk.CurrentRecipeId != expected) throw new Exception("Wrong rebinding prediction: " + desk.CurrentRecipeId);
+                desk.TryStart();
+                for (int step = 0; step < 30 && desk.StateIdentifier != StateEnum.Complete; step++) desk.ExecuteHeartbeat(10, 10);
+                if (desk.StateIdentifier != StateEnum.Complete) throw new Exception("Rebinding did not complete");
+                var output = desk.GetInteriorSpheres().SelectMany(s => s.GetTokens()).Where(t => PlayerNotebook.IsNotebook(t.Payload)).ToArray();
+                if (output.Length != 1 || output[0] != notebook || card.Id != stackId || card.Quantity != 1 ||
+                    card.EntityId != "playernotebook." + color + "." + design ||
+                    (paint != null && (test.Press ? paint.Payload.Defunct : !paint.Payload.Defunct && paint.Payload.EntityId == "paint." + color)))
+                    throw new Exception("Rebinding failed: outputs=" + output.Length + " sameToken=" + (output.Length == 1 && output[0] == notebook) +
+                        " stack=" + card.Id + " entity=" + card.EntityId + " quantity=" + card.Quantity +
+                        " optional=" + paint?.Payload.EntityId + " defunct=" + paint?.Payload.Defunct);
+                var saved = Newtonsoft.Json.Linq.JObject.Parse(card.GetIllumination(NotebookCodec.IlluminationKey));
+                if ((string)saved["Color"] != color || (string)saved["Design"] != design) throw new Exception("Binding metadata mismatch");
+                saved["Color"] = original["Color"].DeepClone(); saved["Design"] = original["Design"].DeepClone();
+                if (!Newtonsoft.Json.Linq.JToken.DeepEquals(original, saved)) throw new Exception("Rebinding changed document contents");
+                Debug.Log("Notebook rebind PASS: " + color + "/" + design + " skill=" + level + " press=" + test.Press + " same stack/document/entries/bookmark; paint consumed, press retained");
+                desk.Conclude();
+                for (int step = 0; step < 5 && desk.StateIdentifier != StateEnum.Unstarted; step++) desk.ExecuteHeartbeat(0, 0);
+            }
+            status = "PASS 10 native rebinding executions; written notebook identity and contents unchanged. Save and cold reload next.";
+        }
+        catch (Exception ex) { status = ex.ToString(); Debug.LogError(status); }
+    }
+
     private void TestCrafting()
     {
         try

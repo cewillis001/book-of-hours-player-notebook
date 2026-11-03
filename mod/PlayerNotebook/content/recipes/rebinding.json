@@ -1,0 +1,452 @@
+{
+  "recipes": [
+    {
+      "id": "playernotebook.rebind.color.brown.plain",
+      "actionid": "library.desk.*",
+      "label": "Recolor: Brown (plain)",
+      "startdescription": "Change the cover to brown; keep its plain design and all writing. [Stitching & Binding level 1 or higher. No paper, ink, tools or memories. Leave With empty for brown.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "pigment": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.brown.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.brown.decorated",
+      "actionid": "library.desk.*",
+      "label": "Recolor: Brown (decorated)",
+      "startdescription": "Change the cover to brown; keep its decorated design and all writing. [Stitching & Binding level 1 or higher. No paper, ink, tools or memories. Leave With empty for brown.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "pigment": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.brown.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.blue.plain",
+      "actionid": "library.desk.*",
+      "label": "Recolor: Blue (plain)",
+      "startdescription": "Change the cover to blue; keep its plain design and all writing. [Stitching & Binding level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Blue.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": 1,
+        "paint.green": -1,
+        "paint.red": -1
+      },
+      "effects": {
+        "paint.blue": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.blue.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.blue.decorated",
+      "actionid": "library.desk.*",
+      "label": "Recolor: Blue (decorated)",
+      "startdescription": "Change the cover to blue; keep its decorated design and all writing. [Stitching & Binding level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Blue.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": 1,
+        "paint.green": -1,
+        "paint.red": -1
+      },
+      "effects": {
+        "paint.blue": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.blue.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.green.plain",
+      "actionid": "library.desk.*",
+      "label": "Recolor: Green (plain)",
+      "startdescription": "Change the cover to green; keep its plain design and all writing. [Stitching & Binding level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Green.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": 1,
+        "paint.red": -1
+      },
+      "effects": {
+        "paint.green": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.green.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.green.decorated",
+      "actionid": "library.desk.*",
+      "label": "Recolor: Green (decorated)",
+      "startdescription": "Change the cover to green; keep its decorated design and all writing. [Stitching & Binding level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Green.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": 1,
+        "paint.red": -1
+      },
+      "effects": {
+        "paint.green": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.green.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.red.plain",
+      "actionid": "library.desk.*",
+      "label": "Recolor: Red (plain)",
+      "startdescription": "Change the cover to red; keep its plain design and all writing. [Stitching & Binding level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Red.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": 1
+      },
+      "effects": {
+        "paint.red": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.red.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.red.decorated",
+      "actionid": "library.desk.*",
+      "label": "Recolor: Red (decorated)",
+      "startdescription": "Change the cover to red; keep its decorated design and all writing. [Stitching & Binding level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Red.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": 1
+      },
+      "effects": {
+        "paint.red": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.red.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.brown.decorated",
+      "actionid": "library.desk.*",
+      "label": "Decorate the Binding",
+      "startdescription": "Work a decorated binding, preserving its brown color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, paint, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.brown.plain": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.brown.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.brown.plain",
+      "actionid": "library.desk.*",
+      "label": "Simplify the Binding",
+      "startdescription": "Work a plain binding, preserving its brown color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, paint, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.brown.decorated": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.brown.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.blue.decorated",
+      "actionid": "library.desk.*",
+      "label": "Decorate the Binding",
+      "startdescription": "Work a decorated binding, preserving its blue color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, paint, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.blue.plain": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.blue.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.blue.plain",
+      "actionid": "library.desk.*",
+      "label": "Simplify the Binding",
+      "startdescription": "Work a plain binding, preserving its blue color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, paint, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.blue.decorated": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.blue.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.green.decorated",
+      "actionid": "library.desk.*",
+      "label": "Decorate the Binding",
+      "startdescription": "Work a decorated binding, preserving its green color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, paint, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.green.plain": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.green.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.green.plain",
+      "actionid": "library.desk.*",
+      "label": "Simplify the Binding",
+      "startdescription": "Work a plain binding, preserving its green color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, paint, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.green.decorated": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.green.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.red.decorated",
+      "actionid": "library.desk.*",
+      "label": "Decorate the Binding",
+      "startdescription": "Work a decorated binding, preserving its red color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, paint, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.red.plain": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.red.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.red.plain",
+      "actionid": "library.desk.*",
+      "label": "Simplify the Binding",
+      "startdescription": "Work a plain binding, preserving its red color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, paint, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.red.decorated": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.red.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    }
+  ]
+}

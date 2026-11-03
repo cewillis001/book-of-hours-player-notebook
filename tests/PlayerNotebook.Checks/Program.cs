@@ -29,6 +29,24 @@ a.Entries.Add(new NotebookEntry { Heading = "Second", Body = "" });
 var body = a.Entries[0].Body;
 a.MoveEntry(0, 1);
 var raw = NotebookCodec.Write(a);
+var rebound = NotebookCodec.Read(raw, "card-a");
+rebound.LastSelectedEntryId = rebound.Entries[1].Id;
+var beforeBinding = Newtonsoft.Json.Linq.JObject.Parse(NotebookCodec.Write(rebound));
+foreach (var color in new[] { "blue", "green", "red", "brown" })
+foreach (var design in new[] { "plain", "decorated" })
+{
+    rebound.Rebind(color, design);
+    var afterBinding = Newtonsoft.Json.Linq.JObject.Parse(NotebookCodec.Write(rebound));
+    Check((string)afterBinding["Color"] == color && (string)afterBinding["Design"] == design,
+        "Rebinding selects " + color + " " + design);
+    afterBinding["Color"] = beforeBinding["Color"].DeepClone();
+    afterBinding["Design"] = beforeBinding["Design"].DeepClone();
+    Check(Newtonsoft.Json.Linq.JToken.DeepEquals(beforeBinding, afterBinding),
+        "Rebinding preserves every other document field");
+}
+var validBinding = NotebookCodec.Write(rebound);
+try { rebound.Rebind("unknown", "plain"); throw new Exception("Invalid binding accepted"); }
+catch (ArgumentException) { Check(NotebookCodec.Write(rebound) == validBinding, "Invalid binding makes no changes"); }
 var loaded = NotebookCodec.Read(raw, "card-a");
 Check(loaded.Id == a.Id && loaded.Entries[1].Id == a.Entries[1].Id, "Identity survives serialization");
 Check(loaded.DisplayName == a.Title && b.DisplayName == a.Title && b.Entries.Count == 0, "Duplicate titles remain independent");

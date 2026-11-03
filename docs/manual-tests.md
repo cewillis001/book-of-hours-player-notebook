@@ -108,6 +108,7 @@ verify TEST BUILD save-root and successful initialization logs before entering g
     or tool: notebook recipes must stop matching.
 
 Starter setup and original basic artwork are implemented and tested as described above.
-Broader colors are not implemented. The art remains basic original geometric artwork.
+Brown, blue, green and red bindings are implemented; rebinding verification is recorded
+in rebinding.md. The art remains basic original geometric artwork.
 The full acceptance checklist remains in the handoff. Record results with exact game/mod
 versions and steps; leave unchecked tests explicitly unverified.

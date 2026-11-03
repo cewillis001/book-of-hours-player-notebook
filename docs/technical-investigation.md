@@ -287,3 +287,39 @@ The test audit caught three stale transforms before correction; all 17 sampled r
 states had zero positional difference. Undo and native save preserved all original text,
 IDs, entry order and document fields, allowing only the existing last-entry bookmark.
 This verifies the corrected path; an unfixed one-line-offset A/B reproduction was not run.
+
+## Rebinding existing notebooks — 2026-11-03
+
+The original level 4 paper recipe creates a new notebook; it never transforms an old one.
+Rebinding now has separate color and design operations, per the user's clarification:
+color at skill 1+ preserves design; Book Press at skill 4+ toggles design, preserving color.
+See rebinding.md for the deterministic matrix and exact ingredients. Paint: Blue/Green/Red
+and Book Press are actual installed items. Native `_liquid` fatiguing transforms used
+paint to Dregs; this is normal consumption, while the press is returned.
+
+Desk Papers/With slots normally reject notebooks/paint. A scoped GetMatchForTokenPayload
+postfix admits only valid quantity-one notebook payloads into desk i1, and these three
+paints into desk i2 only while i1 holds such a notebook. Native state/capacity/travel checks
+remain. No global readable/blank aspect or vanilla record override is added. New recipes
+require notebook-specific aspects and mutually exclusive source designs/ingredients;
+their priority reservation applies only to our recipe namespace. Native save serialization
+also visits recipes with null IDs; the priority hook explicitly permits that case.
+
+Native xtrigger transformations use ElementStack.ChangeTo, retaining the existing stack,
+illumination dictionary and notebook identity. A scoped prefix validates the current
+document and synchronizes only binding fields before the native Fundamental change event
+refreshes artwork. Malformed/future documents are refused by slot admission and the prefix.
+All eight palette/design entities block merging through the existing notebook guard.
+
+Offline checks pass 39 model cases, actual native serialization and compiled Harmony
+patch checks (including null-ID priority), 72 recolor and 72 design requirement cases.
+Isolated Reading Room testing passed ten native slot/prediction/start/completion/conclude
+executions, with unchanged Token/stack/document/entry IDs, quantity, complete text/order
+and bookmark at each step. The test accelerates situation heartbeat; it is not a manual
+60-second playthrough. Native save after a complete return-to-brown cycle matches all
+three original raw notebook payloads exactly, including the two uninvolved notebooks.
+Another ten-execution sequence ended blue; native save changed only that Color field
+across the three documents. Full exit/restart plus another native save retained all
+three saved payloads exactly. Physical double-click on the blue book opened its original
+Unicode title and multiline entry. Other desks/mods and physical ingredient drag/drop
+remain unverified.

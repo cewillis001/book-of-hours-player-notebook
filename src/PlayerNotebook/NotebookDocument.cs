@@ -29,6 +29,13 @@ namespace PlayerNotebooks
         [JsonIgnore] public int OpeningEntryIndex => Entries.Count == 0 ? -1 :
             Math.Max(0, Entries.FindIndex(entry => entry.Id == LastSelectedEntryId));
 
+        public void Rebind(string color, string design)
+        {
+            if (!NotebookBinding.IsValid(color, design)) throw new ArgumentException("Unknown notebook binding");
+            Color = color;
+            Design = design;
+        }
+
         public void MoveEntry(int from, int to)
         {
             if (from < 0 || from >= Entries.Count || to < 0 || to >= Entries.Count)
@@ -36,6 +43,23 @@ namespace PlayerNotebooks
             var entry = Entries[from];
             Entries.RemoveAt(from);
             Entries.Insert(to, entry);
+        }
+    }
+
+    public static class NotebookBinding
+    {
+        public static bool IsValid(string color, string design) =>
+            (color == "brown" || color == "blue" || color == "green" || color == "red") &&
+            (design == "plain" || design == "decorated");
+
+        public static bool TryParseEntity(string entityId, out string color, out string design)
+        {
+            color = design = null;
+            var parts = entityId?.Split('.');
+            if (parts == null || parts.Length != 3 || parts[0] != "playernotebook" || !IsValid(parts[1], parts[2]))
+                return false;
+            color = parts[1]; design = parts[2];
+            return true;
         }
     }
 
