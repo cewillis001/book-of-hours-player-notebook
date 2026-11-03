@@ -412,6 +412,33 @@ public sealed class NotebookTextField : TMP_InputField
     private float lastEdit = -10;
     private bool applying;
     private bool revealCaret;
+    private RectTransform caretTransform;
+    public override void Rebuild(CanvasUpdate update)
+    {
+        if (update == CanvasUpdate.LatePreRender) AlignCaretWithText();
+        base.Rebuild(update);
+        // TMP can move the text again while generating caret/selection geometry.
+        if (update == CanvasUpdate.LatePreRender) AlignCaretWithText();
+    }
+    private void AlignCaretWithText()
+    {
+        if (textComponent == null || textViewport == null) return;
+        if (caretTransform == null) caretTransform = textViewport.Find("Caret") as RectTransform;
+        if (caretTransform == null) return;
+        var text = textComponent.rectTransform;
+#if NOTEBOOK_TESTING
+        var delta = caretTransform.anchoredPosition - text.anchoredPosition;
+        if (delta.sqrMagnitude > 0.0001f)
+            Debug.Log("Notebook caret alignment corrected: delta=" + delta + " text=" + text.anchoredPosition);
+#endif
+        // Native desktop LateUpdate can return before TMP synchronizes this sibling.
+        // Both meshes use text-local coordinates, so they must share its transform.
+        caretTransform.anchorMin = text.anchorMin; caretTransform.anchorMax = text.anchorMax;
+        caretTransform.pivot = text.pivot; caretTransform.sizeDelta = text.sizeDelta;
+        caretTransform.localRotation = text.localRotation; caretTransform.localScale = text.localScale;
+        caretTransform.localPosition = text.localPosition;
+        caretTransform.anchoredPosition = text.anchoredPosition;
+    }
     internal void RevealCaretAfterKey() { revealCaret = true; }
     protected override void LateUpdate()
     {

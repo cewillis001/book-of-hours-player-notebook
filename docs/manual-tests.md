@@ -65,6 +65,14 @@ and displayed exactly Untitled Notebook in the physical detail, without creating
 
 The remaining checklist below is broader than those verified results.
 
+Scroll/caret regression verified 2026-11-02 on FEATHER2026.1.f.3 at 1920x1080 with
+the 31,391-character isolated fixture: appended overflow text, navigated Up/Home,
+Ctrl+Home/End and Page Up, scrolled back with the wheel, clicked/selected a word and
+typed a replacement on its visible line. Caret and selection remained aligned;
+all 17 end-of-frame transform samples matched. Undo plus native save restored exact
+original document contents/IDs/order (apart from the existing last-entry bookmark).
+This does not establish continuous scrollbar thumb dragging or every display scale.
+
 Use an isolated test playthrough and backed-up saves. Do not test against the only copy
 of an established game. New games receive a Lodge starter and recipes provide further
 notebooks. Dev-only controls are available through scripts/prepare-runtime-test.ps1;

@@ -48,6 +48,7 @@ internal sealed class NotebookTestControls : MonoBehaviour
     private string status = "Isolated test build: load the copied playthrough.";
     IEnumerator Start()
     {
+        StartCoroutine(AuditCaretAlignment());
         var stage = Watchman.Get<StageHand>();
         while (!stage.SceneIsActive(Watchman.Get<Compendium>().GetSingleEntity<Dictum>().MenuScene))
             yield return null;
@@ -131,6 +132,28 @@ internal sealed class NotebookTestControls : MonoBehaviour
         GUILayout.EndArea();
     }
     private int lastCanvas;
+    private IEnumerator AuditCaretAlignment()
+    {
+        var samples = 0;
+        var previousPosition = new Vector2(float.NaN, float.NaN);
+        var previousFocus = -1;
+        while (samples < 100)
+        {
+            yield return new WaitForEndOfFrame();
+            var window = NotebookWindow.Instance;
+            if (window == null || !window.IsOpen) continue;
+            var field = window.GetComponentsInChildren<NotebookTextField>().FirstOrDefault(f => f.isFocused);
+            if (field == null) continue;
+            var caret = field.textViewport.Find("Caret") as RectTransform;
+            if (caret == null) continue;
+            var position = field.textComponent.rectTransform.anchoredPosition;
+            var focus = field.selectionStringFocusPosition;
+            if (position == previousPosition && focus == previousFocus) continue;
+            previousPosition = position; previousFocus = focus; samples++;
+            Debug.Log("Notebook rendered caret alignment: delta=" + (caret.anchoredPosition - position) +
+                " text=" + position + " focus=" + focus + " chars=" + field.text.Length);
+        }
+    }
     private float nextCaretSample;
     private int caretSamples;
     private int lastCaretAnchor = -1, lastCaretEnd = -1;

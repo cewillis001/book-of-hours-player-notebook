@@ -270,3 +270,20 @@ continuous thumb dragging remains unverified. Temporary manual typing and undo i
 31,391-character note followed by native save preserved its entire raw illumination exactly.
 Normal production was rebuilt and installed after game exit; all7 current real-player
 file hashes still match the pre-test baseline. Existing manual cursor-follow is retained.
+
+## Cursor offset after scrolling — corrected and verified live
+
+The desktop TMP input path can return from LateUpdate before synchronizing the Caret
+sibling transform. Our multiline cursor-follow also moves the text transform directly.
+Caret and selection geometry use text-local coordinates, so a stale sibling position
+displaces both. NotebookTextField now synchronizes that transform before and after
+the native LatePreRender Rebuild; native geometry generation can itself move the text.
+This is confined to notebook fields and changes neither payloads nor other game inputs.
+
+On 2026-11-02, isolated FEATHER2026.1.f.3 testing at 1920x1080 used the 31,391-character
+fixture. Appending past the bottom, Up/Home, Ctrl+Home/End, Page Up, wheel scrolling,
+clicking a line, selecting a word and replacing it all kept caret/selection aligned.
+The test audit caught three stale transforms before correction; all 17 sampled rendered
+states had zero positional difference. Undo and native save preserved all original text,
+IDs, entry order and document fields, allowing only the existing last-entry bookmark.
+This verifies the corrected path; an unfixed one-line-offset A/B reproduction was not run.
