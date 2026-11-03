@@ -106,15 +106,29 @@ internal static class Program
             }).ToList();
             if (rebindDefinitions.Any(d => d.Action != (d.Id.Contains(".color.") ? "library.prospect.loggia" : "library.desk.*")))
                 throw new Exception("Rebinding workstation scope changed");
+            var installedPigments = new HashSet<string>();
+            var elementsDir = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(typeof(ElementStack).Assembly.Location), "../StreamingAssets/bhcontent/core/elements"));
+            foreach (var file in Directory.GetFiles(elementsDir, "*.json"))
+            foreach (var item in JObject.Parse(File.ReadAllText(file))["elements"] ?? new JArray())
+            {
+                var record = (JObject)item;
+                var aspects = record.GetValue("aspects", StringComparison.OrdinalIgnoreCase) as JObject;
+                if ((int?)aspects?["pigment"] > 0)
+                    installedPigments.Add((string)record.GetValue("id", StringComparison.OrdinalIgnoreCase));
+            }
+            if (!installedPigments.SetEquals(NotebookBinding.Palette.Where(p => p.Pigment != null).Select(p => p.Pigment)))
+                throw new Exception("Binding palette does not cover exactly the installed pigment set");
+            Console.WriteLine("PASS all " + installedPigments.Count + " installed pigments have a binding mapping");
             for (int level = 1; level <= 9; level++)
-            foreach (var color in new[] { "brown", "blue", "green", "red" })
+            foreach (var binding in NotebookBinding.Palette)
+            foreach (var color in new[] { binding.Color })
             foreach (var design in new[] { "plain", "decorated" })
             {
                 var aspects = new AspectsDictionary(new Dictionary<string, int> {
                     {"ability", 1}, {"s.inks.containment", 1}, {"skill", level}, {"notebook.bindable", 1},
                     {"notebook." + design, 1}, {"playernotebook.green." + design, 1}
                 });
-                if (color != "brown") { aspects["pigment"] = 1; aspects["paint." + color] = 1; }
+                if (color != "brown") { aspects["pigment"] = 1; aspects[binding.Pigment] = 1; }
                 var matches = rebindDefinitions.Where(d => aspects.SatisfiesRequirements(d.Reqs)).ToList();
                 var wanted = "playernotebook.rebind.color." + color + "." + design;
                 if (matches.Count != 1 || matches[0].Id != wanted) throw new Exception("Ambiguous rebinding: " + wanted);
@@ -134,11 +148,12 @@ internal static class Program
                 if (recipe.Priority != 2) throw new Exception("Rebinding priority not applied");
             }
             var unknownPigment = new AspectsDictionary(new Dictionary<string, int> {
-                {"ability",1}, {"s.inks.containment",1}, {"skill",4}, {"notebook.bindable",1}, {"notebook.plain",1}, {"pigment",1}, {"paint.pink",1}
+                {"ability",1}, {"s.inks.containment",1}, {"skill",4}, {"notebook.bindable",1}, {"notebook.plain",1}, {"pigment",1}, {"notebook.test.unknownpigment",1}
             });
             if (rebindDefinitions.Any(d => unknownPigment.SatisfiesRequirements(d.Reqs))) throw new Exception("Unknown paint accepted");
             for (int level = 1; level <= 9; level++)
-            foreach (var color in new[] { "brown", "blue", "green", "red" })
+            foreach (var binding in NotebookBinding.Palette)
+            foreach (var color in new[] { binding.Color })
             foreach (var design in new[] { "plain", "decorated" })
             {
                 var aspects = new AspectsDictionary(new Dictionary<string, int> {
@@ -152,7 +167,7 @@ internal static class Program
                 aspects["pigment"] = 1;
                 if (rebindDefinitions.Any(d => aspects.SatisfiesRequirements(d.Reqs))) throw new Exception("Decoration accepted paint");
             }
-            Console.WriteLine("PASS real engine rebinding requirements: 72 recolor + 72 design cases, preserved design at all levels, design gate at 4, exclusive outcomes and exclusions");
+            Console.WriteLine("PASS real engine rebinding requirements: " + (NotebookBinding.Palette.Count * 18) + " recolor + " + (NotebookBinding.Palette.Count * 18) + " design cases, preserved design at all levels, design gate at 4, exclusive outcomes and exclusions");
         }
         finally { harmony.UnpatchAll(harmony.Id); }
         Console.WriteLine("Not an in-game save/load or UI test.");

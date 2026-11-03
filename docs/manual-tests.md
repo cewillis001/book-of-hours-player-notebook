@@ -108,7 +108,8 @@ verify TEST BUILD save-root and successful initialization logs before entering g
     or tool: notebook recipes must stop matching.
 
 Starter setup and original basic artwork are implemented and tested as described above.
-Brown, blue, green and red bindings are implemented; rebinding verification is recorded
-in rebinding.md. The art remains basic original geometric artwork.
+All 16 pigment bindings plus undyed brown are implemented in both designs; the mapping
+and current verification are recorded in rebinding.md. Artwork is original geometric
+drawing, with a dawn gradient for Auroral.
 The full acceptance checklist remains in the handoff. Record results with exact game/mod
 versions and steps; leave unchecked tests explicitly unverified.

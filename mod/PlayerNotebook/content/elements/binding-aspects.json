@@ -76,6 +76,188 @@
       "isAspect": true,
       "isHidden": true,
       "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.duskblue.plain",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.duskblue.decorated",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.paleblue.plain",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.paleblue.decorated",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.boskgreen.plain",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.boskgreen.decorated",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.mothgold.plain",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.mothgold.decorated",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.pink.plain",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.pink.decorated",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.yellow.plain",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.yellow.decorated",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.sapphire.plain",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.sapphire.decorated",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.iotic.plain",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.iotic.decorated",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.xanthotic.plain",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.xanthotic.decorated",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.auroral.plain",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.auroral.decorated",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.vitreous.plain",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.vitreous.decorated",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.refulgin.plain",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.refulgin.decorated",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.bitterblack.plain",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
+    },
+    {
+      "id": "notebook.rebind.bitterblack.decorated",
+      "label": "Notebook binding",
+      "isAspect": true,
+      "isHidden": true,
+      "noartneeded": true
     }
   ]
 }

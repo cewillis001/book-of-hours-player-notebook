@@ -3,6 +3,7 @@ param(
     [string]$FixtureSave,
     [switch]$Launch,
     [switch]$NewGame,
+    [string]$BindingColor,
     [int]$Width,
     [int]$Height
 )
@@ -29,6 +30,7 @@ if ($Launch) {
     $start.Arguments = '-screen-fullscreen 0'
     if ($Width -gt 0 -and $Height -gt 0) { $start.Arguments += " -screen-width $Width -screen-height $Height" }
     $start.EnvironmentVariables['PLAYERNOTEBOOK_TEST_ROOT'] = $root
+    if ($BindingColor) { $start.EnvironmentVariables['PLAYERNOTEBOOK_TEST_BINDING_COLOR'] = $BindingColor }
     if ($Width -gt 0 -and $Height -gt 0) {
         $start.EnvironmentVariables['PLAYERNOTEBOOK_TEST_WIDTH'] = $Width.ToString()
         $start.EnvironmentVariables['PLAYERNOTEBOOK_TEST_HEIGHT'] = $Height.ToString()

@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework></PropertyGroup>
   <ItemGroup>
+    <EmbeddedResource Include="../../mod/PlayerNotebook/bindings.json" LogicalName="PlayerNotebooks.bindings.json" />
     <Compile Include="../../src/PlayerNotebook/NotebookDocument.cs" Link="NotebookDocument.cs" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using PlayerNotebooks;
 
 int checks = 0;
@@ -32,7 +33,7 @@ var raw = NotebookCodec.Write(a);
 var rebound = NotebookCodec.Read(raw, "card-a");
 rebound.LastSelectedEntryId = rebound.Entries[1].Id;
 var beforeBinding = Newtonsoft.Json.Linq.JObject.Parse(NotebookCodec.Write(rebound));
-foreach (var color in new[] { "blue", "green", "red", "brown" })
+foreach (var color in NotebookBinding.Palette.Select(p => p.Color))
 foreach (var design in new[] { "plain", "decorated" })
 {
     rebound.Rebind(color, design);

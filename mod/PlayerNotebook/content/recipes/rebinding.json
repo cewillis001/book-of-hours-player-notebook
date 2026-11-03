@@ -4,10 +4,11 @@
       "id": "playernotebook.rebind.color.brown.plain",
       "actionid": "library.prospect.loggia",
       "label": "Recolor: Brown (plain)",
-      "startdescription": "Change the cover to brown; keep its plain design and all writing. [Inks of Containment level 1 or higher. No paper, ink, tools or memories. Leave the second + slot empty for brown.] Put the notebook in the first + slot; put paint in the second + slot.",
+      "startdescription": "Change the cover to Brown; keep its plain design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Leave the second + slot empty for brown. No paper, ink, tools or memories.]",
       "desc": "A new color; the same words within.",
       "reqs": {
         "ability": 1,
+        "s.inks.containment": 1,
         "skill": 1,
         "notebook.bindable": 1,
         "notebook.plain": 1,
@@ -16,8 +17,7 @@
         "tool": -1,
         "memory": -1,
         "readable": -1,
-        "pigment": -1,
-        "s.inks.containment": 1
+        "pigment": -1
       },
       "effects": {},
       "aspects": {
@@ -31,10 +31,11 @@
       "id": "playernotebook.rebind.color.brown.decorated",
       "actionid": "library.prospect.loggia",
       "label": "Recolor: Brown (decorated)",
-      "startdescription": "Change the cover to brown; keep its decorated design and all writing. [Inks of Containment level 1 or higher. No paper, ink, tools or memories. Leave the second + slot empty for brown.] Put the notebook in the first + slot; put paint in the second + slot.",
+      "startdescription": "Change the cover to Brown; keep its decorated design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Leave the second + slot empty for brown. No paper, ink, tools or memories.]",
       "desc": "A new color; the same words within.",
       "reqs": {
         "ability": 1,
+        "s.inks.containment": 1,
         "skill": 1,
         "notebook.bindable": 1,
         "notebook.decorated": 1,
@@ -43,8 +44,7 @@
         "tool": -1,
         "memory": -1,
         "readable": -1,
-        "pigment": -1,
-        "s.inks.containment": 1
+        "pigment": -1
       },
       "effects": {},
       "aspects": {
@@ -58,10 +58,11 @@
       "id": "playernotebook.rebind.color.blue.plain",
       "actionid": "library.prospect.loggia",
       "label": "Recolor: Blue (plain)",
-      "startdescription": "Change the cover to blue; keep its plain design and all writing. [Inks of Containment level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Blue.] Put the notebook in the first + slot; put paint in the second + slot.",
+      "startdescription": "Change the cover to Blue; keep its plain design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Blue pigment. No paper, ink, tools or memories.]",
       "desc": "A new color; the same words within.",
       "reqs": {
         "ability": 1,
+        "s.inks.containment": 1,
         "skill": 1,
         "notebook.bindable": 1,
         "notebook.plain": 1,
@@ -73,7 +74,19 @@
         "paint.blue": 1,
         "paint.green": -1,
         "paint.red": -1,
-        "s.inks.containment": 1
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
       },
       "effects": {
         "paint.blue": -1
@@ -89,10 +102,11 @@
       "id": "playernotebook.rebind.color.blue.decorated",
       "actionid": "library.prospect.loggia",
       "label": "Recolor: Blue (decorated)",
-      "startdescription": "Change the cover to blue; keep its decorated design and all writing. [Inks of Containment level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Blue.] Put the notebook in the first + slot; put paint in the second + slot.",
+      "startdescription": "Change the cover to Blue; keep its decorated design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Blue pigment. No paper, ink, tools or memories.]",
       "desc": "A new color; the same words within.",
       "reqs": {
         "ability": 1,
+        "s.inks.containment": 1,
         "skill": 1,
         "notebook.bindable": 1,
         "notebook.decorated": 1,
@@ -104,7 +118,19 @@
         "paint.blue": 1,
         "paint.green": -1,
         "paint.red": -1,
-        "s.inks.containment": 1
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
       },
       "effects": {
         "paint.blue": -1
@@ -120,10 +146,11 @@
       "id": "playernotebook.rebind.color.green.plain",
       "actionid": "library.prospect.loggia",
       "label": "Recolor: Green (plain)",
-      "startdescription": "Change the cover to green; keep its plain design and all writing. [Inks of Containment level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Green.] Put the notebook in the first + slot; put paint in the second + slot.",
+      "startdescription": "Change the cover to Green; keep its plain design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Green pigment. No paper, ink, tools or memories.]",
       "desc": "A new color; the same words within.",
       "reqs": {
         "ability": 1,
+        "s.inks.containment": 1,
         "skill": 1,
         "notebook.bindable": 1,
         "notebook.plain": 1,
@@ -135,7 +162,19 @@
         "paint.blue": -1,
         "paint.green": 1,
         "paint.red": -1,
-        "s.inks.containment": 1
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
       },
       "effects": {
         "paint.green": -1
@@ -151,10 +190,11 @@
       "id": "playernotebook.rebind.color.green.decorated",
       "actionid": "library.prospect.loggia",
       "label": "Recolor: Green (decorated)",
-      "startdescription": "Change the cover to green; keep its decorated design and all writing. [Inks of Containment level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Green.] Put the notebook in the first + slot; put paint in the second + slot.",
+      "startdescription": "Change the cover to Green; keep its decorated design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Green pigment. No paper, ink, tools or memories.]",
       "desc": "A new color; the same words within.",
       "reqs": {
         "ability": 1,
+        "s.inks.containment": 1,
         "skill": 1,
         "notebook.bindable": 1,
         "notebook.decorated": 1,
@@ -166,7 +206,19 @@
         "paint.blue": -1,
         "paint.green": 1,
         "paint.red": -1,
-        "s.inks.containment": 1
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
       },
       "effects": {
         "paint.green": -1
@@ -182,10 +234,11 @@
       "id": "playernotebook.rebind.color.red.plain",
       "actionid": "library.prospect.loggia",
       "label": "Recolor: Red (plain)",
-      "startdescription": "Change the cover to red; keep its plain design and all writing. [Inks of Containment level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Red.] Put the notebook in the first + slot; put paint in the second + slot.",
+      "startdescription": "Change the cover to Red; keep its plain design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Red pigment. No paper, ink, tools or memories.]",
       "desc": "A new color; the same words within.",
       "reqs": {
         "ability": 1,
+        "s.inks.containment": 1,
         "skill": 1,
         "notebook.bindable": 1,
         "notebook.plain": 1,
@@ -197,7 +250,19 @@
         "paint.blue": -1,
         "paint.green": -1,
         "paint.red": 1,
-        "s.inks.containment": 1
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
       },
       "effects": {
         "paint.red": -1
@@ -213,10 +278,11 @@
       "id": "playernotebook.rebind.color.red.decorated",
       "actionid": "library.prospect.loggia",
       "label": "Recolor: Red (decorated)",
-      "startdescription": "Change the cover to red; keep its decorated design and all writing. [Inks of Containment level 1 or higher. No paper, ink, tools or memories. Consumes one Paint: Red.] Put the notebook in the first + slot; put paint in the second + slot.",
+      "startdescription": "Change the cover to Red; keep its decorated design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Red pigment. No paper, ink, tools or memories.]",
       "desc": "A new color; the same words within.",
       "reqs": {
         "ability": 1,
+        "s.inks.containment": 1,
         "skill": 1,
         "notebook.bindable": 1,
         "notebook.decorated": 1,
@@ -228,7 +294,19 @@
         "paint.blue": -1,
         "paint.green": -1,
         "paint.red": 1,
-        "s.inks.containment": 1
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
       },
       "effects": {
         "paint.red": -1
@@ -241,10 +319,1154 @@
       "craftable": true
     },
     {
+      "id": "playernotebook.rebind.color.duskblue.plain",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Dusk-Blue (plain)",
+      "startdescription": "Change the cover to Dusk-Blue; keep its plain design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Dusk-Blue pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": 1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "paint.blue.dark": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.duskblue.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.duskblue.decorated",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Dusk-Blue (decorated)",
+      "startdescription": "Change the cover to Dusk-Blue; keep its decorated design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Dusk-Blue pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": 1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "paint.blue.dark": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.duskblue.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.paleblue.plain",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Palest Blue (plain)",
+      "startdescription": "Change the cover to Palest Blue; keep its plain design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Palest Blue pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": 1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "paint.blue.pale": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.paleblue.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.paleblue.decorated",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Palest Blue (decorated)",
+      "startdescription": "Change the cover to Palest Blue; keep its decorated design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Palest Blue pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": 1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "paint.blue.pale": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.paleblue.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.boskgreen.plain",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Bosk-Green (plain)",
+      "startdescription": "Change the cover to Bosk-Green; keep its plain design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Bosk-Green pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": 1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "paint.bosk": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.boskgreen.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.boskgreen.decorated",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Bosk-Green (decorated)",
+      "startdescription": "Change the cover to Bosk-Green; keep its decorated design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Bosk-Green pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": 1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "paint.bosk": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.boskgreen.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.mothgold.plain",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Moth-Gold (plain)",
+      "startdescription": "Change the cover to Moth-Gold; keep its plain design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Moth-Gold pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": 1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "paint.moth": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.mothgold.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.mothgold.decorated",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Moth-Gold (decorated)",
+      "startdescription": "Change the cover to Moth-Gold; keep its decorated design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Moth-Gold pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": 1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "paint.moth": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.mothgold.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.pink.plain",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Pink (plain)",
+      "startdescription": "Change the cover to Pink; keep its plain design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Pink pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": 1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "paint.pink": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.pink.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.pink.decorated",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Pink (decorated)",
+      "startdescription": "Change the cover to Pink; keep its decorated design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Pink pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": 1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "paint.pink": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.pink.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.yellow.plain",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Yellow (plain)",
+      "startdescription": "Change the cover to Yellow; keep its plain design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Yellow pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": 1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "paint.yellow": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.yellow.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.yellow.decorated",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Yellow (decorated)",
+      "startdescription": "Change the cover to Yellow; keep its decorated design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Yellow pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": 1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "paint.yellow": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.yellow.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.sapphire.plain",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Black Sapphire (plain)",
+      "startdescription": "Change the cover to Black Sapphire; keep its plain design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Black Sapphire pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": 1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "black.sapphire.wash": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.sapphire.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.sapphire.decorated",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Black Sapphire (decorated)",
+      "startdescription": "Change the cover to Black Sapphire; keep its decorated design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Black Sapphire pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": 1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "black.sapphire.wash": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.sapphire.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.iotic.plain",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Iotic Copper (plain)",
+      "startdescription": "Change the cover to Iotic Copper; keep its plain design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Iotic Copper pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": 1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "essence.iotic": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.iotic.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.iotic.decorated",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Iotic Copper (decorated)",
+      "startdescription": "Change the cover to Iotic Copper; keep its decorated design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Iotic Copper pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": 1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "essence.iotic": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.iotic.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.xanthotic.plain",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Xanthotic Gold (plain)",
+      "startdescription": "Change the cover to Xanthotic Gold; keep its plain design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Xanthotic Gold pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": 1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "essence.xanthotic": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.xanthotic.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.xanthotic.decorated",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Xanthotic Gold (decorated)",
+      "startdescription": "Change the cover to Xanthotic Gold; keep its decorated design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Xanthotic Gold pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": 1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "essence.xanthotic": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.xanthotic.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.auroral.plain",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Auroral Dawn (plain)",
+      "startdescription": "Change the cover to Auroral Dawn; keep its plain design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Auroral Dawn pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": 1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "ichor.auroral": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.auroral.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.auroral.decorated",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Auroral Dawn (decorated)",
+      "startdescription": "Change the cover to Auroral Dawn; keep its decorated design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Auroral Dawn pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": 1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "ichor.auroral": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.auroral.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.vitreous.plain",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Vitreous Grey (plain)",
+      "startdescription": "Change the cover to Vitreous Grey; keep its plain design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Vitreous Grey pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": 1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "ichor.vitreous": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.vitreous.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.vitreous.decorated",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Vitreous Grey (decorated)",
+      "startdescription": "Change the cover to Vitreous Grey; keep its decorated design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Vitreous Grey pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": 1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "ichor.vitreous": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.vitreous.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.refulgin.plain",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Refulgin White (plain)",
+      "startdescription": "Change the cover to Refulgin White; keep its plain design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Refulgin White pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": 1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "pigment.refulgin": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.refulgin.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.refulgin.decorated",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Refulgin White (decorated)",
+      "startdescription": "Change the cover to Refulgin White; keep its decorated design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Refulgin White pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": 1,
+        "salts.bitterblack": -1
+      },
+      "effects": {
+        "pigment.refulgin": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.refulgin.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.bitterblack.plain",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Bitterblack (plain)",
+      "startdescription": "Change the cover to Bitterblack; keep its plain design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Bitterblack pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.plain": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": 1
+      },
+      "effects": {
+        "salts.bitterblack": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.bitterblack.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.color.bitterblack.decorated",
+      "actionid": "library.prospect.loggia",
+      "label": "Recolor: Bitterblack (decorated)",
+      "startdescription": "Change the cover to Bitterblack; keep its decorated design and all writing. [Inks of Containment level 1 or higher and a compatible Soul. Notebook in the first + slot; pigment in the second. Uses one Bitterblack pigment. No paper, ink, tools or memories.]",
+      "desc": "A new color; the same words within.",
+      "reqs": {
+        "ability": 1,
+        "s.inks.containment": 1,
+        "skill": 1,
+        "notebook.bindable": 1,
+        "notebook.decorated": 1,
+        "quire.paper": -1,
+        "ink": -1,
+        "tool": -1,
+        "memory": -1,
+        "readable": -1,
+        "paint.blue": -1,
+        "paint.green": -1,
+        "paint.red": -1,
+        "paint.blue.dark": -1,
+        "paint.blue.pale": -1,
+        "paint.bosk": -1,
+        "paint.moth": -1,
+        "paint.pink": -1,
+        "paint.yellow": -1,
+        "black.sapphire.wash": -1,
+        "essence.iotic": -1,
+        "essence.xanthotic": -1,
+        "ichor.auroral": -1,
+        "ichor.vitreous": -1,
+        "pigment.refulgin": -1,
+        "salts.bitterblack": 1
+      },
+      "effects": {
+        "salts.bitterblack": -1
+      },
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.bitterblack.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
       "id": "playernotebook.rebind.design.brown.decorated",
       "actionid": "library.desk.*",
       "label": "Decorate the Binding",
-      "startdescription": "Work a decorated binding, preserving its brown color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, paint, ink or memories.]",
+      "startdescription": "Work a decorated binding, preserving its Brown color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
       "desc": "The binding changes; its words remain.",
       "reqs": {
         "ability": 1,
@@ -270,7 +1492,7 @@
       "id": "playernotebook.rebind.design.brown.plain",
       "actionid": "library.desk.*",
       "label": "Simplify the Binding",
-      "startdescription": "Work a plain binding, preserving its brown color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, paint, ink or memories.]",
+      "startdescription": "Work a plain binding, preserving its Brown color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
       "desc": "The binding changes; its words remain.",
       "reqs": {
         "ability": 1,
@@ -296,7 +1518,7 @@
       "id": "playernotebook.rebind.design.blue.decorated",
       "actionid": "library.desk.*",
       "label": "Decorate the Binding",
-      "startdescription": "Work a decorated binding, preserving its blue color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, paint, ink or memories.]",
+      "startdescription": "Work a decorated binding, preserving its Blue color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
       "desc": "The binding changes; its words remain.",
       "reqs": {
         "ability": 1,
@@ -322,7 +1544,7 @@
       "id": "playernotebook.rebind.design.blue.plain",
       "actionid": "library.desk.*",
       "label": "Simplify the Binding",
-      "startdescription": "Work a plain binding, preserving its blue color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, paint, ink or memories.]",
+      "startdescription": "Work a plain binding, preserving its Blue color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
       "desc": "The binding changes; its words remain.",
       "reqs": {
         "ability": 1,
@@ -348,7 +1570,7 @@
       "id": "playernotebook.rebind.design.green.decorated",
       "actionid": "library.desk.*",
       "label": "Decorate the Binding",
-      "startdescription": "Work a decorated binding, preserving its green color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, paint, ink or memories.]",
+      "startdescription": "Work a decorated binding, preserving its Green color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
       "desc": "The binding changes; its words remain.",
       "reqs": {
         "ability": 1,
@@ -374,7 +1596,7 @@
       "id": "playernotebook.rebind.design.green.plain",
       "actionid": "library.desk.*",
       "label": "Simplify the Binding",
-      "startdescription": "Work a plain binding, preserving its green color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, paint, ink or memories.]",
+      "startdescription": "Work a plain binding, preserving its Green color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
       "desc": "The binding changes; its words remain.",
       "reqs": {
         "ability": 1,
@@ -400,7 +1622,7 @@
       "id": "playernotebook.rebind.design.red.decorated",
       "actionid": "library.desk.*",
       "label": "Decorate the Binding",
-      "startdescription": "Work a decorated binding, preserving its red color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, paint, ink or memories.]",
+      "startdescription": "Work a decorated binding, preserving its Red color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
       "desc": "The binding changes; its words remain.",
       "reqs": {
         "ability": 1,
@@ -426,7 +1648,7 @@
       "id": "playernotebook.rebind.design.red.plain",
       "actionid": "library.desk.*",
       "label": "Simplify the Binding",
-      "startdescription": "Work a plain binding, preserving its red color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, paint, ink or memories.]",
+      "startdescription": "Work a plain binding, preserving its Red color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
       "desc": "The binding changes; its words remain.",
       "reqs": {
         "ability": 1,
@@ -444,6 +1666,682 @@
       "aspects": {
         "fatiguing": 1,
         "notebook.rebind.red.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.duskblue.decorated",
+      "actionid": "library.desk.*",
+      "label": "Decorate the Binding",
+      "startdescription": "Work a decorated binding, preserving its Dusk-Blue color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.duskblue.plain": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.duskblue.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.duskblue.plain",
+      "actionid": "library.desk.*",
+      "label": "Simplify the Binding",
+      "startdescription": "Work a plain binding, preserving its Dusk-Blue color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.duskblue.decorated": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.duskblue.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.paleblue.decorated",
+      "actionid": "library.desk.*",
+      "label": "Decorate the Binding",
+      "startdescription": "Work a decorated binding, preserving its Palest Blue color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.paleblue.plain": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.paleblue.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.paleblue.plain",
+      "actionid": "library.desk.*",
+      "label": "Simplify the Binding",
+      "startdescription": "Work a plain binding, preserving its Palest Blue color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.paleblue.decorated": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.paleblue.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.boskgreen.decorated",
+      "actionid": "library.desk.*",
+      "label": "Decorate the Binding",
+      "startdescription": "Work a decorated binding, preserving its Bosk-Green color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.boskgreen.plain": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.boskgreen.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.boskgreen.plain",
+      "actionid": "library.desk.*",
+      "label": "Simplify the Binding",
+      "startdescription": "Work a plain binding, preserving its Bosk-Green color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.boskgreen.decorated": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.boskgreen.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.mothgold.decorated",
+      "actionid": "library.desk.*",
+      "label": "Decorate the Binding",
+      "startdescription": "Work a decorated binding, preserving its Moth-Gold color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.mothgold.plain": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.mothgold.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.mothgold.plain",
+      "actionid": "library.desk.*",
+      "label": "Simplify the Binding",
+      "startdescription": "Work a plain binding, preserving its Moth-Gold color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.mothgold.decorated": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.mothgold.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.pink.decorated",
+      "actionid": "library.desk.*",
+      "label": "Decorate the Binding",
+      "startdescription": "Work a decorated binding, preserving its Pink color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.pink.plain": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.pink.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.pink.plain",
+      "actionid": "library.desk.*",
+      "label": "Simplify the Binding",
+      "startdescription": "Work a plain binding, preserving its Pink color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.pink.decorated": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.pink.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.yellow.decorated",
+      "actionid": "library.desk.*",
+      "label": "Decorate the Binding",
+      "startdescription": "Work a decorated binding, preserving its Yellow color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.yellow.plain": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.yellow.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.yellow.plain",
+      "actionid": "library.desk.*",
+      "label": "Simplify the Binding",
+      "startdescription": "Work a plain binding, preserving its Yellow color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.yellow.decorated": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.yellow.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.sapphire.decorated",
+      "actionid": "library.desk.*",
+      "label": "Decorate the Binding",
+      "startdescription": "Work a decorated binding, preserving its Black Sapphire color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.sapphire.plain": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.sapphire.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.sapphire.plain",
+      "actionid": "library.desk.*",
+      "label": "Simplify the Binding",
+      "startdescription": "Work a plain binding, preserving its Black Sapphire color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.sapphire.decorated": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.sapphire.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.iotic.decorated",
+      "actionid": "library.desk.*",
+      "label": "Decorate the Binding",
+      "startdescription": "Work a decorated binding, preserving its Iotic Copper color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.iotic.plain": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.iotic.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.iotic.plain",
+      "actionid": "library.desk.*",
+      "label": "Simplify the Binding",
+      "startdescription": "Work a plain binding, preserving its Iotic Copper color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.iotic.decorated": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.iotic.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.xanthotic.decorated",
+      "actionid": "library.desk.*",
+      "label": "Decorate the Binding",
+      "startdescription": "Work a decorated binding, preserving its Xanthotic Gold color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.xanthotic.plain": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.xanthotic.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.xanthotic.plain",
+      "actionid": "library.desk.*",
+      "label": "Simplify the Binding",
+      "startdescription": "Work a plain binding, preserving its Xanthotic Gold color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.xanthotic.decorated": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.xanthotic.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.auroral.decorated",
+      "actionid": "library.desk.*",
+      "label": "Decorate the Binding",
+      "startdescription": "Work a decorated binding, preserving its Auroral Dawn color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.auroral.plain": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.auroral.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.auroral.plain",
+      "actionid": "library.desk.*",
+      "label": "Simplify the Binding",
+      "startdescription": "Work a plain binding, preserving its Auroral Dawn color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.auroral.decorated": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.auroral.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.vitreous.decorated",
+      "actionid": "library.desk.*",
+      "label": "Decorate the Binding",
+      "startdescription": "Work a decorated binding, preserving its Vitreous Grey color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.vitreous.plain": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.vitreous.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.vitreous.plain",
+      "actionid": "library.desk.*",
+      "label": "Simplify the Binding",
+      "startdescription": "Work a plain binding, preserving its Vitreous Grey color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.vitreous.decorated": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.vitreous.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.refulgin.decorated",
+      "actionid": "library.desk.*",
+      "label": "Decorate the Binding",
+      "startdescription": "Work a decorated binding, preserving its Refulgin White color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.refulgin.plain": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.refulgin.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.refulgin.plain",
+      "actionid": "library.desk.*",
+      "label": "Simplify the Binding",
+      "startdescription": "Work a plain binding, preserving its Refulgin White color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.refulgin.decorated": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.refulgin.plain": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.bitterblack.decorated",
+      "actionid": "library.desk.*",
+      "label": "Decorate the Binding",
+      "startdescription": "Work a decorated binding, preserving its Bitterblack color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.bitterblack.plain": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.bitterblack.decorated": 1
+      },
+      "warmup": 60,
+      "craftable": true
+    },
+    {
+      "id": "playernotebook.rebind.design.bitterblack.plain",
+      "actionid": "library.desk.*",
+      "label": "Simplify the Binding",
+      "startdescription": "Work a plain binding, preserving its Bitterblack color and all writing. [Stitching & Binding level 4 or higher, a compatible Soul and a Book Press in With. The press is returned. No paper, pigment, ink or memories.]",
+      "desc": "The binding changes; its words remain.",
+      "reqs": {
+        "ability": 1,
+        "s.stitching.binding": 1,
+        "skill": 4,
+        "playernotebook.bitterblack.decorated": 1,
+        "book.press": 1,
+        "pigment": -1,
+        "quire.paper": -1,
+        "ink": -1,
+        "memory": -1,
+        "readable": -1
+      },
+      "effects": {},
+      "aspects": {
+        "fatiguing": 1,
+        "notebook.rebind.bitterblack.plain": 1
       },
       "warmup": 60,
       "craftable": true

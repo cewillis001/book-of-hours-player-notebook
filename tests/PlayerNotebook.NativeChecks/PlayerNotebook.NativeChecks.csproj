@@ -5,6 +5,7 @@
     <ManagedDir>$(GameDir)\bh_Data\Managed</ManagedDir>
   </PropertyGroup>
   <ItemGroup>
+    <EmbeddedResource Include="../../mod/PlayerNotebook/bindings.json" LogicalName="PlayerNotebooks.bindings.json" />
     <PackageReference Include="Lib.Harmony" Version="2.3.3" />
     <Compile Include="../../src/PlayerNotebook/NotebookDocument.cs" Link="NotebookDocument.cs" />
     <Reference Include="SecretHistories.Main"><HintPath>$(ManagedDir)\SecretHistories.Main.dll</HintPath><Private>false</Private></Reference>

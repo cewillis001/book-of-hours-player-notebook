@@ -3,13 +3,9 @@ $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
 $destination = Join-Path (Split-Path -Parent $PSScriptRoot) 'mod/PlayerNotebook/images/books'
 New-Item -ItemType Directory -Path $destination -Force | Out-Null
-$palettes = @{
-    brown = @('#543623', '#2e2018', '#ad8652')
-    blue = @('#294b67', '#182c40', '#8cabc0')
-    green = @('#345740', '#203729', '#92ae80')
-    red = @('#783e3e', '#472629', '#c2917d')
-}
-foreach ($colorName in @('brown', 'blue', 'green', 'red')) {
+$palettes = Get-Content -LiteralPath (Join-Path (Split-Path -Parent $PSScriptRoot) 'mod/PlayerNotebook/bindings.json') -Raw | ConvertFrom-Json
+foreach ($palette in $palettes) {
+$colorName = $palette.color
 foreach ($decorated in @($false, $true)) {
     foreach ($spine in @($false, $true)) {
         $width = if ($spine) { 48 } else { 256 }
@@ -20,11 +16,15 @@ foreach ($decorated in @($false, $true)) {
         $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
         $graphics.ScaleTransform(0.5, 0.5)
         $graphics.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
-        $palette = $palettes[$colorName]
-        $graphics.Clear([System.Drawing.ColorTranslator]::FromHtml($palette[0]))
-        $edge = [System.Drawing.Pen]::new([System.Drawing.ColorTranslator]::FromHtml($palette[1]), 5)
-        $thread = [System.Drawing.Pen]::new([System.Drawing.ColorTranslator]::FromHtml($palette[2]), 2)
-        $gold = [System.Drawing.Pen]::new([System.Drawing.ColorTranslator]::FromHtml('#d4b36a'), 3)
+        $graphics.Clear([System.Drawing.ColorTranslator]::FromHtml($palette.cover))
+        if ($palette.coverBottom) {
+            $gradient = [System.Drawing.Drawing2D.LinearGradientBrush]::new([System.Drawing.Rectangle]::new(0,0,$width,$height), [System.Drawing.ColorTranslator]::FromHtml($palette.cover), [System.Drawing.ColorTranslator]::FromHtml($palette.coverBottom), [single]90)
+            $graphics.FillRectangle($gradient, 0, 0, $width, $height)
+            $gradient.Dispose()
+        }
+        $edge = [System.Drawing.Pen]::new([System.Drawing.ColorTranslator]::FromHtml($palette.edge), 5)
+        $thread = [System.Drawing.Pen]::new([System.Drawing.ColorTranslator]::FromHtml($palette.thread), 2)
+        $gold = [System.Drawing.Pen]::new([System.Drawing.ColorTranslator]::FromHtml($palette.ornament), 3)
         $graphics.DrawRectangle($edge, 3, 3, ($width - 6), ($height - 6))
         $graphics.DrawRectangle($thread, 10, 12, ($width - 20), ($height - 24))
         if ($spine) {

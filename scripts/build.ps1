@@ -3,6 +3,8 @@ $ErrorActionPreference = 'Stop'
 $repo = Split-Path -Parent $PSScriptRoot
 Push-Location $repo
 try {
+    & "$PSScriptRoot/generate-bindings.ps1"
+    & "$PSScriptRoot/render-bindings.ps1"
     dotnet build src/PlayerNotebook/PlayerNotebook.csproj -c Release "/p:GameDir=$GameDir"
     if ($LASTEXITCODE) { throw 'Build failed' }
     dotnet run --project tests/PlayerNotebook.Checks -c Release

@@ -1,0 +1,173 @@
+[
+  {
+    "color": "brown",
+    "label": "Brown",
+    "pigment": null,
+    "cover": "#543623",
+    "edge": "#2e2018",
+    "thread": "#ad8652",
+    "ornament": "#d4b36a",
+    "residue": null
+  },
+  {
+    "color": "blue",
+    "label": "Blue",
+    "pigment": "paint.blue",
+    "cover": "#294b67",
+    "edge": "#182c40",
+    "thread": "#8cabc0",
+    "ornament": "#d4b36a",
+    "residue": "dregs"
+  },
+  {
+    "color": "green",
+    "label": "Green",
+    "pigment": "paint.green",
+    "cover": "#345740",
+    "edge": "#203729",
+    "thread": "#92ae80",
+    "ornament": "#d4b36a",
+    "residue": "dregs"
+  },
+  {
+    "color": "red",
+    "label": "Red",
+    "pigment": "paint.red",
+    "cover": "#783e3e",
+    "edge": "#472629",
+    "thread": "#c2917d",
+    "ornament": "#d4b36a",
+    "residue": "dregs"
+  },
+  {
+    "color": "duskblue",
+    "label": "Dusk-Blue",
+    "pigment": "paint.blue.dark",
+    "cover": "#263c59",
+    "edge": "#142337",
+    "thread": "#7f94b5",
+    "ornament": "#d4b36a",
+    "residue": "dregs"
+  },
+  {
+    "color": "paleblue",
+    "label": "Palest Blue",
+    "pigment": "paint.blue.pale",
+    "cover": "#a3c0cf",
+    "edge": "#4b697d",
+    "thread": "#64879d",
+    "ornament": "#67532d",
+    "residue": "dregs"
+  },
+  {
+    "color": "boskgreen",
+    "label": "Bosk-Green",
+    "pigment": "paint.bosk",
+    "cover": "#234333",
+    "edge": "#14281d",
+    "thread": "#7b9c72",
+    "ornament": "#d4b36a",
+    "residue": "dregs"
+  },
+  {
+    "color": "mothgold",
+    "label": "Moth-Gold",
+    "pigment": "paint.moth",
+    "cover": "#aa9656",
+    "edge": "#54492c",
+    "thread": "#dfcc91",
+    "ornament": "#5d4325",
+    "residue": "dregs"
+  },
+  {
+    "color": "pink",
+    "label": "Pink",
+    "pigment": "paint.pink",
+    "cover": "#b77991",
+    "edge": "#654052",
+    "thread": "#dfb1c1",
+    "ornament": "#62462e",
+    "residue": "dregs"
+  },
+  {
+    "color": "yellow",
+    "label": "Yellow",
+    "pigment": "paint.yellow",
+    "cover": "#c4ad4f",
+    "edge": "#645426",
+    "thread": "#ede0a1",
+    "ornament": "#654821",
+    "residue": "dregs"
+  },
+  {
+    "color": "sapphire",
+    "label": "Black Sapphire",
+    "pigment": "black.sapphire.wash",
+    "cover": "#172438",
+    "edge": "#0b1422",
+    "thread": "#60799a",
+    "ornament": "#d4b36a",
+    "residue": "dregs"
+  },
+  {
+    "color": "iotic",
+    "label": "Iotic Copper",
+    "pigment": "essence.iotic",
+    "cover": "#99473d",
+    "edge": "#4e2421",
+    "thread": "#d2946c",
+    "ornament": "#d4b36a",
+    "residue": "dregs"
+  },
+  {
+    "color": "xanthotic",
+    "label": "Xanthotic Gold",
+    "pigment": "essence.xanthotic",
+    "cover": "#ca9c44",
+    "edge": "#6a4822",
+    "thread": "#efcd83",
+    "ornament": "#664222",
+    "residue": "dregs"
+  },
+  {
+    "color": "auroral",
+    "label": "Auroral Dawn",
+    "pigment": "ichor.auroral",
+    "cover": "#c28b82",
+    "edge": "#694955",
+    "thread": "#e7bca0",
+    "ornament": "#6b4738",
+    "residue": "dregs",
+    "coverBottom": "#897b9e"
+  },
+  {
+    "color": "vitreous",
+    "label": "Vitreous Grey",
+    "pigment": "ichor.vitreous",
+    "cover": "#cad4d3",
+    "edge": "#627b7d",
+    "thread": "#889fa1",
+    "ornament": "#705b33",
+    "residue": "dregs"
+  },
+  {
+    "color": "refulgin",
+    "label": "Refulgin White",
+    "pigment": "pigment.refulgin",
+    "cover": "#f0efe4",
+    "edge": "#797c78",
+    "thread": "#b4b7aa",
+    "ornament": "#77603b",
+    "residue": "residue"
+  },
+  {
+    "color": "bitterblack",
+    "label": "Bitterblack",
+    "pigment": "salts.bitterblack",
+    "cover": "#292320",
+    "edge": "#161211",
+    "thread": "#817363",
+    "ornament": "#d4b36a",
+    "residue": "residue"
+  }
+]

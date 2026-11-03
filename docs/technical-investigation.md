@@ -349,3 +349,26 @@ documents; all other fields and both uninvolved notebooks matched exactly.
 The fixture creates a native Loggia situation with its actual Verb.Thresholds; this
 verifies the workstation API, not room unlocking or a manually timed craft. The native
 WindGust window-hide sound warning is nonfatal. A full exit/restart and native save retained all three raw notebook payloads exactly. Physical double-click opened the original title and multiline entry.
+
+## Full pigment palette — 2026-11-03
+
+Installed element definitions contain 16 pigments: nine named paints, Black Sapphire
+Wash, Iotic/Xanthotic Essence, Ichor Auroral/Vitreous, Refulgin and Bitterblack Salts.
+The last two inherit _material (fatiguing -> Residue); the other fourteen inherit
+_liquid (fatiguing -> Dregs). All are natively accepted by Loggia's second + slot.
+
+The original bindings.json catalog defines 17 shades including brown. It drives
+generate-bindings.ps1, render-bindings.ps1 and embedded binding validation, preserving
+the four existing color IDs. There are 34 quantity-one book variants, 68 cover/spine
+PNGs and 68 exclusive color/design recipes. Named paints follow named shades; special
+pigment interpretations are recorded in rebinding.md. No game artwork is distributed.
+
+Offline checks pass 91 model cases, exact coverage of the installed pigment set,
+306 recolor and 306 design requirement cases, and native serialization/compiled Harmony
+checks. The expanded runtime test checks every shade in both designs, exact native
+pigment remnants, cover/spine loading and dimensions, and complete document invariance
+apart from binding fields. All 37 native executions passed, including every pigment in
+both designs, two press operations and a high-level recolor. Native save retained all
+three documents with only one Color change. A targeted Auroral craft and full exit/restart
+also passed. Native save after reload retained all three raw notebook payloads exactly;
+physical double-click opened the original title and multiline Unicode entry.

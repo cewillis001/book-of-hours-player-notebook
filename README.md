@@ -10,7 +10,7 @@ Verified behavior and remaining checks are in [docs/manual-tests.md](docs/manual
 ## Implemented prototype
 
 - FEATHER-native DLL entry point; no BepInEx installation.
-- Physical notebooks with original brown, blue, green and red covers/spines, in plain and decorated designs.
+- Physical notebooks with 17 original cover/spine colors, in plain and decorated designs.
 - Double-click opens a book-style editor with a left entry index, title, optional headings,
   multiline writing area, reorder controls and deletion confirmation. The editor scales
   with screen height and width; A−/A+ adjust writing text. Existing notes open immediately.
@@ -40,9 +40,10 @@ An in-game audit of 72 Reading Room recipe predictions covered skill levels 1–
 paper/no paper, and ink/memory/tool exclusions. Other desks/mod combinations need more coverage.
 
 To recolor an existing notebook, use the **Loggia Prospect** with **Inks of Containment
-(any level)** and a compatible Soul. Put the notebook in the **first + slot**, and **Paint: Blue**,
-**Paint: Green** or **Paint: Red** in the **second + slot**; leave Second + empty for brown.
-Paint is used up. The current plain/decorated design is preserved, including at skill
+(any level)** and a compatible Soul. Put the notebook in the **first + slot**, and
+**any of the game's 16 pigments** in the **second + slot**; leave the second + empty for brown.
+Pigment is used up; liquids leave Dregs and solids leave Residue. The current
+plain/decorated design is preserved, including at skill
 levels 1–3. Unlocking the Loggia Prospect is part of the progression; desks do not recolor.
 
 To change the design, use a compatible **desk**, **Stitching & Binding level 4+**, a

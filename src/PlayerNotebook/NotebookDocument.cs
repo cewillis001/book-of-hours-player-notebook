@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -48,8 +49,16 @@ namespace PlayerNotebooks
 
     public static class NotebookBinding
     {
+        public static readonly IReadOnlyList<NotebookBindingColor> Palette = LoadPalette().AsReadOnly();
+        private static List<NotebookBindingColor> LoadPalette()
+        {
+            using (var stream = typeof(NotebookBinding).Assembly.GetManifestResourceStream("PlayerNotebooks.bindings.json"))
+            using (var reader = new StreamReader(stream))
+                return JsonConvert.DeserializeObject<List<NotebookBindingColor>>(reader.ReadToEnd());
+        }
+
         public static bool IsValid(string color, string design) =>
-            (color == "brown" || color == "blue" || color == "green" || color == "red") &&
+            Palette.Any(p => p.Color == color) &&
             (design == "plain" || design == "decorated");
 
         public static bool TryParseEntity(string entityId, out string color, out string design)
@@ -61,6 +70,14 @@ namespace PlayerNotebooks
             color = parts[1]; design = parts[2];
             return true;
         }
+    }
+
+    public sealed class NotebookBindingColor
+    {
+        public string Color { get; set; }
+        public string Label { get; set; }
+        public string Pigment { get; set; }
+        public string Residue { get; set; }
     }
 
     public static class NotebookCodec

@@ -381,18 +381,18 @@ internal sealed class NotebookTestControls : MonoBehaviour
             var card = (ElementStack)notebook.Payload;
             var stackId = card.Id;
             var original = Newtonsoft.Json.Linq.JObject.Parse(card.GetIllumination(NotebookCodec.IlluminationKey));
-            var cases = new[] {
-                new { Level = 1, Color = "blue", Press = false },
-                new { Level = 1, Color = "green", Press = false },
-                new { Level = 1, Color = "red", Press = false },
-                new { Level = 4, Color = "", Press = true },
-                new { Level = 1, Color = "blue", Press = false },
-                new { Level = 1, Color = "green", Press = false },
-                new { Level = 1, Color = "brown", Press = false },
-                new { Level = 4, Color = "red", Press = false },
-                new { Level = 4, Color = "", Press = true },
-                new { Level = 1, Color = "blue", Press = false }
-            };
+            var cases = NotebookBinding.Palette.Select(p => new { Level = 1, Color = p.Color, Press = false }).ToList();
+            cases.Add(new { Level = 4, Color = "", Press = true });
+            cases.AddRange(NotebookBinding.Palette.Select(p => new { Level = 1, Color = p.Color, Press = false }));
+            cases.Add(new { Level = 4, Color = "", Press = true });
+            cases.Add(new { Level = 4, Color = "blue", Press = false });
+            var onlyColor = Environment.GetEnvironmentVariable("PLAYERNOTEBOOK_TEST_BINDING_COLOR");
+            if (!string.IsNullOrEmpty(onlyColor))
+            {
+                if (!NotebookBinding.Palette.Any(p => p.Color == onlyColor)) throw new Exception("Unknown test binding color");
+                cases = new[] { new { Level = 1, Color = onlyColor, Press = false } }.ToList();
+            }
+            var checkedDeskPaint = false;
             foreach (var test in cases)
             {
                 var desk = test.Press ? bindingDesk : colorStation;
@@ -400,6 +400,7 @@ internal sealed class NotebookTestControls : MonoBehaviour
                 var before = NotebookCodec.Read(card.GetIllumination(NotebookCodec.IlluminationKey), card.Id);
                 var color = test.Press ? before.Color : test.Color;
                 var design = test.Press ? (before.Design == "plain" ? "decorated" : "plain") : before.Design;
+                var binding = NotebookBinding.Palette.Single(p => p.Color == color);
                 if (desk.StateIdentifier != StateEnum.Unstarted || desk.GetInteriorSpheres().Any(s => s.Tokens.Count != 0))
                     throw new InvalidOperationException("Workstation must be unstarted and empty for test: " + desk.VerbId);
                 var storage = desk.GetSingleSphereByCategory(SphereCategory.SituationStorage);
@@ -411,7 +412,7 @@ internal sealed class NotebookTestControls : MonoBehaviour
                 var soul = new TokenCreationCommand(new ElementStackCreationCommand(test.Press ? "xcho" : "xfet", 1), new TokenLocation(Vector3.zero, storage)).Execute(Context.Unknown(), storage);
                 var slots = desk.GetInteriorSpheres();
                 // Desk paint admission has been removed, even with a notebook present.
-                if (!test.Press)
+                if (!test.Press && !checkedDeskPaint)
                 {
                     var exterior = bindingDesk.Token.Sphere;
                     var blue = new TokenCreationCommand(new ElementStackCreationCommand("paint.blue", 1), new TokenLocation(Vector3.zero, exterior)).Execute(Context.Unknown(), exterior);
@@ -419,14 +420,15 @@ internal sealed class NotebookTestControls : MonoBehaviour
                         throw new Exception("Desk rejected notebook during paint admission check");
                     if (bindingDesk.GetInteriorSpheres().Single(s => s.Id == "i2").CanAcceptToken(blue))
                         throw new Exception("Desk still admits paint");
+                    checkedDeskPaint = true;
                 }
                 foreach (var pair in new[] { new { Id = "s", Token = skill }, new { Id = "a", Token = soul }, new { Id = "i1", Token = notebook } })
                     if (!slots.Single(s => s.Id == pair.Id).TryAcceptToken(pair.Token, Context.Unknown()))
                         throw new Exception("Rebinding desk rejected " + pair.Id);
                 Token paint = null;
-                if (test.Press || color != "brown")
+                if (test.Press || binding.Pigment != null)
                 {
-                    paint = new TokenCreationCommand(new ElementStackCreationCommand(test.Press ? "book.press" : "paint." + color, 1), new TokenLocation(Vector3.zero, storage)).Execute(Context.Unknown(), storage);
+                    paint = new TokenCreationCommand(new ElementStackCreationCommand(test.Press ? "book.press" : binding.Pigment, 1), new TokenLocation(Vector3.zero, storage)).Execute(Context.Unknown(), storage);
                     if (!slots.Single(s => s.Id == "i2").TryAcceptToken(paint, Context.Unknown()))
                         throw new Exception("Rebinding desk rejected paint " + color);
                 }
@@ -439,7 +441,7 @@ internal sealed class NotebookTestControls : MonoBehaviour
                 var output = desk.GetInteriorSpheres().SelectMany(s => s.GetTokens()).Where(t => PlayerNotebook.IsNotebook(t.Payload)).ToArray();
                 if (output.Length != 1 || output[0] != notebook || card.Id != stackId || card.Quantity != 1 ||
                     card.EntityId != "playernotebook." + color + "." + design ||
-                    (paint != null && (test.Press ? paint.Payload.Defunct : !paint.Payload.Defunct && paint.Payload.EntityId == "paint." + color)))
+                    (paint != null && (test.Press ? paint.Payload.Defunct || paint.Payload.EntityId != "book.press" : paint.Payload.Defunct || paint.Payload.EntityId != binding.Residue)))
                     throw new Exception("Rebinding failed: outputs=" + output.Length + " sameToken=" + (output.Length == 1 && output[0] == notebook) +
                         " stack=" + card.Id + " entity=" + card.EntityId + " quantity=" + card.Quantity +
                         " optional=" + paint?.Payload.EntityId + " defunct=" + paint?.Payload.Defunct);
@@ -447,11 +449,16 @@ internal sealed class NotebookTestControls : MonoBehaviour
                 if ((string)saved["Color"] != color || (string)saved["Design"] != design) throw new Exception("Binding metadata mismatch");
                 saved["Color"] = original["Color"].DeepClone(); saved["Design"] = original["Design"].DeepClone();
                 if (!Newtonsoft.Json.Linq.JToken.DeepEquals(original, saved)) throw new Exception("Rebinding changed document contents");
-                Debug.Log("Notebook rebind PASS: " + color + "/" + design + " skill=" + level + " station=" + desk.VerbId + " press=" + test.Press + " same stack/document/entries/bookmark; paint consumed, press retained");
+                var cover = ResourcesManager.GetSpriteForBookCover(card.Icon);
+                var spine = ResourcesManager.GetSpriteForBookSpine(card.Icon);
+                if (cover == null || spine == null || ResourcesManager.SpriteIsPlaceholder(cover) || spine.name == "_x_" ||
+                    cover.rect.width != 128 || cover.rect.height != 192 || spine.rect.width != 24 || spine.rect.height != 192)
+                    throw new Exception("Missing binding artwork: " + card.Icon);
+                Debug.Log("Notebook rebind PASS: " + color + "/" + design + " skill=" + level + " station=" + desk.VerbId + " press=" + test.Press + " pigment=" + binding.Pigment + " remainder=" + paint?.Payload.EntityId + " same stack/document/entries/bookmark; pigment consumed, press retained");
                 desk.Conclude();
                 for (int step = 0; step < 5 && desk.StateIdentifier != StateEnum.Unstarted; step++) desk.ExecuteHeartbeat(0, 0);
             }
-            status = "PASS 10 native rebinding executions; written notebook identity and contents unchanged. Save and cold reload next.";
+            status = "PASS " + cases.Count + " native rebinding executions; all pigments/plain/decorated preserve writing. Save and cold reload next.";
         }
         catch (Exception ex) { status = ex.ToString(); Debug.LogError(status); }
     }
