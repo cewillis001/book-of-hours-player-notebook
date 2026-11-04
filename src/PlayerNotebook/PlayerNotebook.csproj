@@ -7,6 +7,7 @@
     <ManagedDir>$(GameDir)\bh_Data\Managed</ManagedDir>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Unity.InputSystem"><HintPath>$(ManagedDir)\Unity.InputSystem.dll</HintPath><Private>false</Private></Reference>
     <EmbeddedResource Include="../../mod/PlayerNotebook/bindings.json" LogicalName="PlayerNotebooks.bindings.json" />
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
     <PackageReference Include="Lib.Harmony" Version="2.3.3" />

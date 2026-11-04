@@ -11,6 +11,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.InputSystem.UI;
 
 // A native Canvas editor. The document and native save contract are unchanged.
 public sealed class NotebookWindow : MonoBehaviour
@@ -107,6 +108,48 @@ public sealed class NotebookWindow : MonoBehaviour
         // Height controls comfortable reading size on ultrawide screens; width also
         // limits the panel so the complete editor remains visible on narrower displays.
         scaler.scaleFactor = Mathf.Min(Screen.height / 1000f, Screen.width / 1480f);
+    }
+    void OnGUI()
+    {
+        if (!IsOpen) return;
+        var focus = EventSystem.current?.currentSelectedGameObject;
+        if (selected < 0 || focus == null || !entryButtons.Any(b => b.gameObject == focus)) return;
+        var input = Event.current;
+        if (input.type != EventType.KeyDown || input.alt || input.control || input.command) return;
+        if (input.keyCode == KeyCode.Return || input.keyCode == KeyCode.KeypadEnter)
+        {
+            EventSystem.current.SetSelectedGameObject(bodyField.gameObject);
+            bodyField.ActivateInputField();
+            input.Use();
+            return;
+        }
+        var page = Mathf.Max(1, Mathf.FloorToInt(listScroll.viewport.rect.height / 88f));
+        var target = selected;
+        switch (input.keyCode)
+        {
+            case KeyCode.Home: target = 0; break;
+            case KeyCode.End: target = document.Entries.Count - 1; break;
+            case KeyCode.UpArrow: target--; break;
+            case KeyCode.DownArrow: target++; break;
+            case KeyCode.PageUp: target -= page; break;
+            case KeyCode.PageDown: target += page; break;
+            default: return;
+        }
+        SelectEntry(Mathf.Clamp(target, 0, document.Entries.Count - 1), true);
+        input.Use();
+    }
+
+    private void RevealSelectedRow()
+    {
+        Canvas.ForceUpdateCanvases();
+        listScroll.StopMovement();
+        var position = listContent.anchoredPosition;
+        var top = selected * 88f;
+        var height = listScroll.viewport.rect.height;
+        if (top < position.y) position.y = top;
+        else if (top + 78 > position.y + height) position.y = top + 78 - height;
+        position.y = Mathf.Clamp(position.y, 0, Mathf.Max(0, listContent.rect.height - height));
+        listContent.anchoredPosition = position;
     }
     void OnDisable() { Close(); }
     void OnApplicationQuit() { Commit(); }
@@ -221,8 +264,8 @@ public sealed class NotebookWindow : MonoBehaviour
     private void BuildEntryScroll(Transform parent)
     {
         var area = Rect(parent, "Entries scroll"); Place(area, 20, 80, 260, 480);
-        listScroll = area.gameObject.AddComponent<ScrollRect>();
-        var viewport = Box(area, "Viewport", index); Stretch(viewport.rectTransform);
+        listScroll = area.gameObject.AddComponent<NotebookEntryScroll>();
+        var viewport = Box(area, "Viewport", index); Stretch(viewport.rectTransform, right: 16);
         viewport.gameObject.AddComponent<RectMask2D>();
         listContent = Rect(viewport.transform, "Entries");
         listContent.anchorMin = new Vector2(0, 1); listContent.anchorMax = Vector2.one;
@@ -230,6 +273,14 @@ public sealed class NotebookWindow : MonoBehaviour
         listScroll.viewport = viewport.rectTransform; listScroll.content = listContent;
         listScroll.horizontal = false; listScroll.vertical = true;
         listScroll.movementType = ScrollRect.MovementType.Clamped; listScroll.scrollSensitivity = 36;
+        var track = Box(area, "Index scrollbar", Hex("#cbbd9c")); Place(track.rectTransform, 250, 0, 10, 480);
+        var thumb = Box(track.transform, "Handle", teal); Stretch(thumb.rectTransform);
+        var bar = track.gameObject.AddComponent<Scrollbar>();
+        bar.handleRect = thumb.rectTransform; bar.targetGraphic = thumb;
+        bar.direction = Scrollbar.Direction.BottomToTop; bar.numberOfSteps = 0;
+        bar.navigation = new Navigation { mode = Navigation.Mode.None };
+        listScroll.verticalScrollbar = bar;
+        listScroll.verticalScrollbarVisibility = ScrollRect.ScrollbarVisibility.AutoHide;
     }
 
     private void RebuildIndex()
@@ -239,11 +290,12 @@ public sealed class NotebookWindow : MonoBehaviour
         for (var i = 0; i < document.Entries.Count; i++)
         {
             var entryIndex = i;
-            var button = MakeButton(listContent, "", 0, i * 88, 260, 78, () => SelectEntry(entryIndex), index, ink);
+            var button = MakeButton(listContent, "", 0, i * 88, 244, 78, () => SelectEntry(entryIndex, true), index, ink);
+            button.navigation = new Navigation { mode = Navigation.Mode.None };
             var text = button.GetComponentInChildren<TextMeshProUGUI>();
-            Place(text.rectTransform, 18, 2, 226, 44); text.font = headingFont; text.fontSize = 24;
+            Place(text.rectTransform, 18, 2, 210, 44); text.font = headingFont; text.fontSize = 24;
             text.alignment = TextAlignmentOptions.MidlineLeft;
-            Label(button.transform, "", 17, muted, 18, 44, 226, 24).name = "Preview";
+            Label(button.transform, "", 17, muted, 18, 44, 210, 24).name = "Preview";
             entryButtons.Add(button);
             UpdateRow(i);
         }
@@ -264,7 +316,7 @@ public sealed class NotebookWindow : MonoBehaviour
         foreach (var text in texts) { text.enableWordWrapping = false; text.overflowMode = TextOverflowModes.Ellipsis; }
     }
 
-    private void SelectEntry(int i)
+    private void SelectEntry(int i, bool focusList = false)
     {
         selected = i; confirmDelete = false;
         var entryId = i >= 0 ? document.Entries[i].Id : null;
@@ -284,6 +336,11 @@ public sealed class NotebookWindow : MonoBehaviour
             deleteLabel.text = "Delete entry";
         }
         for (var row = 0; row < entryButtons.Count; row++) UpdateRow(row);
+        if (focusList && i >= 0)
+        {
+            EventSystem.current?.SetSelectedGameObject(entryButtons[i].gameObject);
+            RevealSelectedRow();
+        }
     }
 
     private void NewEntry()
@@ -400,6 +457,27 @@ public sealed class NotebookWindow : MonoBehaviour
     {
         ColorUtility.TryParseHtmlString(hex, out var color);
         return color;
+    }
+}
+
+// InputSystemUIInputModule scales wheel ticks for the game's UI. Convert back to
+// tick units for this list only; preserve fractional deltas from high-resolution wheels.
+public sealed class NotebookEntryScroll : ScrollRect
+{
+    public override void OnScroll(PointerEventData data)
+    {
+        var delta = data.scrollDelta;
+        var module = EventSystem.current?.currentInputModule as InputSystemUIInputModule;
+        var multiplier = module != null ? module.scrollDeltaPerTick : 1f;
+        try
+        {
+            if (multiplier > 0) data.scrollDelta = delta / multiplier;
+            base.OnScroll(data);
+#if NOTEBOOK_TESTING
+            Debug.Log("Notebook index wheel: delta=" + delta + " multiplier=" + multiplier + " y=" + content.anchoredPosition.y);
+#endif
+        }
+        finally { data.scrollDelta = delta; }
     }
 }
 

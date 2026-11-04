@@ -11,6 +11,9 @@ Verified behavior and remaining checks are in [docs/manual-tests.md](docs/manual
 
 - FEATHER-native DLL entry point; no BepInEx installation.
 - Physical notebooks with 17 original cover/spine colors, in plain and decorated designs.
+- Entry list with calibrated wheel scrolling and a draggable scrollbar. Click an entry,
+  then use Up/Down, Home/End or Page Up/Down to browse; Enter moves into its writing field.
+  Navigation keys retain their normal editing behavior when a text field has focus.
 - Double-click opens a book-style editor with a left entry index, title, optional headings,
   multiline writing area, reorder controls and deletion confirmation. The editor scales
   with screen height and width; A−/A+ adjust writing text. Existing notes open immediately.

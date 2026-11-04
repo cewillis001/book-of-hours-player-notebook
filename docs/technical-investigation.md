@@ -372,3 +372,11 @@ both designs, two press operations and a high-level recolor. Native save retaine
 three documents with only one Color change. A targeted Auroral craft and full exit/restart
 also passed. Native save after reload retained all three raw notebook payloads exactly;
 physical double-click opened the original title and multiline Unicode entry.
+
+## Entry-index scrolling and keyboard navigation — 2026-11-04
+
+The live InputSystemUIInputModule sends a single wheel step as delta6. With index sensitivity36, the old list moved216 UI units (2.45 rows) per step. NotebookEntryScroll divides the event delta by that module's actual scrollDeltaPerTick for this list only, preserving fractional input and restoring the original event afterward. Native ScrollRect still owns clipping/dragging/clamping; an index Scrollbar with continuous values is now connected. No shared input settings change.
+
+Clicking a list row retains EventSystem selection on that row. Unity KeyDown events handle arrows, Home/End and PageUp/PageDown only while a row has focus; the selected row is revealed with minimal movement. Enter focuses the body. Text fields and other controls retain their own events. Direct InputSystem Keyboard polling failed the initial automated test and was replaced before delivery.
+
+Isolated20entry live checks passed wheel distance/reversal, scrollbar thumb drag, Down2->3, PageDown3->8, End20, PageUp15, Home1, Enter into entry9 and caret Down within the same entry. Native save preserved every document field apart from the expected selected-entry bookmark. Offline91model and306+306native recipe cases pass independently. Physical free-spin hardware and held-key repetition remain unverified. Broader framework research is in ui-framework-investigation.md; no UI Toolkit migration was needed for this correction.

@@ -1,5 +1,14 @@
 # Manual verification
 
+Entry-index regression verified 2026-11-04 at 1920x1080 on an isolated 20-entry
+fixture: one wheel step moved 36 UI units with the active input multiplier of 6;
+reverse scrolling and index scrollbar thumb dragging worked. After clicking a row,
+Down, Page Down, End, Page Up and Home selected the expected entries and revealed
+them. Enter focused the body without inserting a newline; Down then moved the caret
+within that entry. Native save preserved all three documents and all 20 entries,
+allowing only the expected last-selected bookmark change. Physical free-spinning
+hardware and held-key repetition remain user acceptance checks.
+
 ## Current native Canvas editor
 
 Isolated in-game checks on FEATHER2026.1.f.3,2026-10-31:
